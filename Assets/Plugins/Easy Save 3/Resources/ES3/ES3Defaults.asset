@@ -29,31 +29,13 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
-    - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - Elementary
-    - AI
-    - UIFrames
-    - Cinemachine
-    - InventorySystem
-    - GameElements
-    - Localization
-    - CustomParticles
-    - Entities
-    - CustomAnimations
-    - Purchasing.Common
-    - Asyncoroutine
-    - ServiceLocator
-    - NavMeshComponents
-    - Purchasing
     - Sirenix.OdinInspector.CompatibilityLayer
-    - Polygons
-    - PPv2URPConverters
+    - Assembly-CSharp
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
-    - NavMeshComponentsEditor
-    - Sirenix.OdinInspector.Modules.UnityMathematics
-    - InventorySystem (EditMode)
     - SimpleFolderIcon
+    - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
