@@ -2,30 +2,26 @@ using Elementary;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-
 namespace Homework_Mechanics.Mechanics
 {
-    public class TakeDamageMechanic : MonoBehaviour
+    public class DeathMechanic : MonoBehaviour
     {
-        [SerializeField, Required] private EventReceiver_Int takeDamage;
         [SerializeField, Required] private LimitedIntBehavior hitPoints;
 
         private void OnEnable()
         {
-            takeDamage.OnEvent += OnTakeDamage;
+            hitPoints.OnValueChanged += OnHitPointChanged;
         }
-
         private void OnDisable()
         {
-            takeDamage.OnEvent -= OnTakeDamage;
+            hitPoints.OnValueChanged -= OnHitPointChanged;
         }
 
-        private void OnTakeDamage(int damage)
+        private void OnHitPointChanged(int health)
         {
-            hitPoints.Value -= damage;
+            if (health <= 0)
+                Debug.LogError("You die");
         }
-
     }
 }
-
 

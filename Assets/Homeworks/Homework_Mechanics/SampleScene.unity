@@ -376,15 +376,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.2727793, y: 0.65462023, z: -0.27508205, w: -0.6491484}
+  m_LocalPosition: {x: 4.732752, y: 4.9636526, z: 0.28081167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4002346293130457699
+--- !u!1001 &2060911057
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -439,5 +439,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7755281339852454285, guid: ad73a4a180d090048bc61d87d1e156a5, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 8179597669185432674, guid: a178f45fefd437d4da9d2030abb1ee00, type: 3}
+    - target: {fileID: 7755281339852454285, guid: ad73a4a180d090048bc61d87d1e156a5, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 2060911058}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad73a4a180d090048bc61d87d1e156a5, type: 3}
+--- !u!4 &2060911058 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8752238824747266445, guid: ad73a4a180d090048bc61d87d1e156a5, type: 3}
+  m_PrefabInstance: {fileID: 2060911057}
+  m_PrefabAsset: {fileID: 0}
