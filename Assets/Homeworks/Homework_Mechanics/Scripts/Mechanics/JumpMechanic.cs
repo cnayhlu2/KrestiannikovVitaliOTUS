@@ -1,3 +1,4 @@
+using Elementary;
 using Homework_Mechanics.Engines;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -7,15 +8,24 @@ namespace Homework_Mechanics.Mechanics
     public class JumpMechanic : MonoBehaviour
     {
         [SerializeField, Required] private TransformEngine positionEngine;
+        [SerializeField, Required] private EventReceiver receiver;
+        [SerializeField, Required] private GroundChecker groundChecker;
         [SerializeField] private int jumpHeight = 5;
 
-        [Button]
-        public void Jump()
+        private void OnEnable()
         {
-            if (positionEngine.IsOnGround)
-            {
-                positionEngine.Value += new Vector3(0, jumpHeight, 0);
-            }
+            receiver.OnEvent += Jump;
+        }
+
+        private void OnDisable()
+        {
+            receiver.OnEvent -= Jump;
+        }
+
+        private void Jump()
+        {
+            if (groundChecker.IsOnGround)
+                positionEngine.Position += new Vector3(0, jumpHeight, 0);
         }
     }
 }

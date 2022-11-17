@@ -2,41 +2,35 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Homework_Mechanics.Engines
 {
     public class TransformEngine : MonoBehaviour
     {
-        public Action<Vector3> OnValueChanged;
+        public Action<Vector3> OnPositionChanged;
 
+        [SerializeField] private Transform currentTransform;
+        [SerializeField, ValidateInput("@transforms.Count>0", "Add any transforms")] 
+        private List<Transform> transforms = new List<Transform>();
+        
+        private Vector3 position;
 
-        private const int groundHeight = 0;
-
-        [SerializeField, ValidateInput("@transforms.Count>0", "Add any transforms")] private List<Transform> transforms = new List<Transform>();
-
-        public Vector3 Value
+        public Vector3 Position
         {
-            get => value;
+            get => position;
             set
             {
-                this.value = value;
-                if (this.value.y < groundHeight)
-                    this.value.y = groundHeight;
-                transforms.ForEach(transform => transform.position = this.value);
-                OnValueChanged?.Invoke(this.value);
+                this.position = value;
+                transforms.ForEach(transform => transform.position = this.position);
+                OnPositionChanged?.Invoke(this.position);
             }
         }
 
-        public bool IsOnGround => this.value.y == groundHeight;
         public Transform GetCurrentTransform => currentTransform;
-
-        [SerializeField] private Transform currentTransform;
-        [SerializeField] private Vector3 value;
 
         private void Awake()
         {
-            this.value = currentTransform.position;
+            this.position = currentTransform.position;
         }
 
     }

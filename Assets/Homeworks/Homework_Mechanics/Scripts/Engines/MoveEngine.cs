@@ -1,11 +1,10 @@
-using Homework_Mechanics.Engines;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-namespace Homework_Mechanics.Mechanics
+namespace Homework_Mechanics.Engines
 {
-    public class MoveMechanic : MonoBehaviour
+    public class MoveEngine : MonoBehaviour
     {
         [SerializeField, Required] private TransformEngine positionEngine;
         [SerializeField] private float distance = .5f;
@@ -32,10 +31,9 @@ namespace Homework_Mechanics.Mechanics
             AddPosition(new Vector3(distance, 0, 0));
         }
 
-
         private void AddPosition(Vector3 addPosition)
         {
-            positionEngine.Value += addPosition;
+            positionEngine.Position += addPosition;
         }
 
 
