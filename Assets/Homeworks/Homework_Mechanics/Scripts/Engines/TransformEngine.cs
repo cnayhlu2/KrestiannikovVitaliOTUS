@@ -9,7 +9,7 @@ namespace Homework_Mechanics.Engines
     {
         public Action<Vector3> OnPositionChanged;
 
-        [SerializeField] private Transform currentTransform;
+        [SerializeField, Required] private Transform currentTransform;
         [SerializeField, ValidateInput("@transforms.Count>0", "Add any transforms")] 
         private List<Transform> transforms = new List<Transform>();
         

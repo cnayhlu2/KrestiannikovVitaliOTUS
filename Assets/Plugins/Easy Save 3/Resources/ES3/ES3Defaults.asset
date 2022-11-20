@@ -33,6 +33,7 @@ MonoBehaviour:
     - Elementary
     - Assembly-CSharp
     - Sirenix.OdinInspector.CompatibilityLayer
+    - Entities
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - SimpleFolderIcon
     - Sirenix.OdinInspector.Modules.UnityMathematics

@@ -9,29 +9,7 @@ namespace Homework_Mechanics.Engines
         [SerializeField, Required] private TransformEngine positionEngine;
         [SerializeField] private float distance = .5f;
 
-        [ButtonGroup("Move")]
-        public void MoveToLeft()
-        {
-            AddPosition(new Vector3(0, 0, -distance));
-        }
-        [ButtonGroup("Move")]
-        public void MoveToRight()
-        {
-            AddPosition(new Vector3(0, 0, distance));
-        }
-
-        [ButtonGroup("Move")]
-        public void MoveToUp()
-        {
-            AddPosition(new Vector3(-distance, 0, 0));
-        }
-        [ButtonGroup("Move")]
-        public void MoveToDown()
-        {
-            AddPosition(new Vector3(distance, 0, 0));
-        }
-
-        private void AddPosition(Vector3 addPosition)
+        public void AddPosition(Vector3 addPosition)
         {
             positionEngine.Position += addPosition;
         }
