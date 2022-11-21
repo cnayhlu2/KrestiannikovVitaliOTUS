@@ -9,7 +9,7 @@ namespace Homework_Components
     {
         [SerializeField, Required] private UnityEntity target;
         [SerializeField, Required] private KeyboardInput keyboardInput;
-        [SerializeField] private float speed = .5f;
+        
 
         private IMoveComponent moveComponent;
 
@@ -30,7 +30,6 @@ namespace Homework_Components
 
         private void Move(Vector3 direction)
         {
-            direction *= speed * Time.deltaTime;
             moveComponent.Move(direction);
         }
     }

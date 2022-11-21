@@ -7,6 +7,7 @@ namespace Homework_Mechanics.Mechanics
     public class DeathMechanic : MonoBehaviour
     {
         [SerializeField, Required] private LimitedIntBehavior hitPoints;
+        [SerializeField, Required] private EventReceiver deathReceiver;
 
         private void OnEnable()
         {
@@ -20,7 +21,7 @@ namespace Homework_Mechanics.Mechanics
         private void OnHitPointChanged(int health)
         {
             if (health <= 0)
-                Debug.LogError("You die");
+                deathReceiver?.Call();
         }
     }
 }

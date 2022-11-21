@@ -7,11 +7,12 @@ namespace Homework_Mechanics.Engines
     public class MoveEngine : MonoBehaviour
     {
         [SerializeField, Required] private TransformEngine positionEngine;
-        [SerializeField] private float distance = .5f;
+        [SerializeField] private float speed = 3;
 
-        public void AddPosition(Vector3 addPosition)
+        public void Move(Vector3 direction)
         {
-            positionEngine.Position += addPosition;
+            direction *= speed * Time.deltaTime;
+            positionEngine.Position += direction;
         }
 
 

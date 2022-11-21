@@ -9,7 +9,7 @@ namespace Homework_Components.Components
 
         public void Move(Vector3 direction)
         {
-            moveEngine.AddPosition(direction);
+            moveEngine.Move(direction);
         }
     }
 }
