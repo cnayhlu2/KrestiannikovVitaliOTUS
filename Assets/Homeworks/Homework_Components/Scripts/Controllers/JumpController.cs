@@ -8,7 +8,7 @@ namespace Homework_Components
     public sealed class JumpController : MonoBehaviour
     {
         [SerializeField, Required] private UnityEntity target;
-        [SerializeField, Required] private KeyboardInput keyboardInput;
+        [SerializeField, Required] private MoveInput keyboardInput;
 
         private IJumpComponent jumpComponent;
 

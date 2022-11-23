@@ -8,7 +8,7 @@ namespace Homework_Components
     public sealed class MoveController : MonoBehaviour
     {
         [SerializeField, Required] private UnityEntity target;
-        [SerializeField, Required] private KeyboardInput keyboardInput;
+        [SerializeField, Required] private MoveInput moveInput;
         
 
         private IMoveComponent moveComponent;
@@ -20,12 +20,12 @@ namespace Homework_Components
 
         private void OnEnable()
         {
-            keyboardInput.OnMove += Move;
+            moveInput.OnMove += Move;
         }
 
         private void OnDisable()
         {
-            keyboardInput.OnMove -= Move;
+            moveInput.OnMove -= Move;
         }
 
         private void Move(Vector3 direction)

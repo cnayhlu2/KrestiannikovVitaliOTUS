@@ -555,8 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2060911058}
-  keyboardInput: {fileID: 1652419231}
-  speed: 3
+  moveInput: {fileID: 1652419231}
 --- !u!1 &1652419229
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +567,7 @@ GameObject:
   - component: {fileID: 1652419230}
   - component: {fileID: 1652419231}
   m_Layer: 0
-  m_Name: KeyboardInput
+  m_Name: MoveInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,7 +597,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652419229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d33c67ff353ab43832c994ae4b9696, type: 3}
+  m_Script: {fileID: 11500000, guid: f95739e58b5eb9141925386bfdeeab7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1821351711

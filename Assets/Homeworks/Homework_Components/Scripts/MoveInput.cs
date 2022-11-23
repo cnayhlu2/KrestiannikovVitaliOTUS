@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Homework_Components
 {
-    public sealed class KeyboardInput : MonoBehaviour
+    public sealed class MoveInput : MonoBehaviour
     {
         public Action<Vector3> OnMove;
         public Action OnJump;
