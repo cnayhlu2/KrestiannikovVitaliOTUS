@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformEngine: {fileID: 169007410944237119}
-  groundHeight: 0
+  distanceToGround: 0.1
 --- !u!1 &3338782221046405137
 GameObject:
   m_ObjectHideFlags: 0
