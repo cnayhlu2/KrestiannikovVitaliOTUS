@@ -698,12 +698,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4002346294993243694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd96fc4dc3351fd4c9bf58b8eb92724b, type: 3}
+  m_Script: {fileID: 11500000, guid: f6a8ef2bfbe6d96438c14a03e4915e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   positionEngine: {fileID: 169007410944237119}
   groundChecker: {fileID: 680399780899973985}
-  direction: {x: 0, y: -1, z: 0}
+  force: 1
 --- !u!1 &5125597779877144316
 GameObject:
   m_ObjectHideFlags: 0
