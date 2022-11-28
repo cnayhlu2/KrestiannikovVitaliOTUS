@@ -20,8 +20,10 @@ namespace Homework_Mechanics.Mechanics
 
         private void OnHitPointChanged(int health)
         {
-            if (health <= 0)
+            if (health <= 0) {
+                Debug.Log("Death by take damage");
                 deathReceiver?.Call();
+            }
         }
     }
 }

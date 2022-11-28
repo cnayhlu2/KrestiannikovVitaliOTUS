@@ -1,12 +1,20 @@
+using GameElements;
 using System;
 using UnityEngine;
 
 namespace Homework_Components
 {
-    public sealed class MoveInput : MonoBehaviour
+    public sealed class MoveInput : MonoBehaviour,
+        IGameStartElement,
+        IGameFinishElement
     {
         public Action<Vector3> OnMove;
         public Action OnJump;
+
+        private void Awake()
+        {
+            this.enabled = false;
+        }
 
         private void FixedUpdate()
         {
@@ -31,7 +39,8 @@ namespace Homework_Components
             {
                 Move(Vector3.right);
             }
-            else if (Input.GetKey(KeyCode.Space))
+            
+            if (Input.GetKey(KeyCode.Space))
             {
                 Jump();
             }
@@ -46,7 +55,15 @@ namespace Homework_Components
         {
             this.OnJump?.Invoke();
         }
+        void IGameStartElement.StartGame(IGameContext context)
+        {
+            this.enabled = true;
+        }
 
+        void IGameFinishElement.FinishGame(IGameContext context)
+        {
+            this.enabled = false;
+        }
 
     }
 }
