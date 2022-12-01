@@ -1,11 +1,20 @@
+using GameElements;
+using Homework_Game_Context.GameContext;
 using System;
 using UnityEngine;
 
 namespace Homework_Components
 {
-    public class MouseInput : MonoBehaviour
+    public sealed class MouseInput : MonoBehaviour,
+        IGameStartElement,
+        IGameFinishElement
     {
         public Action<Vector3> OnMousePress;
+
+        private void Awake()
+        {
+            this.enabled = false;
+        }
 
         private void FixedUpdate()
         {
@@ -25,6 +34,15 @@ namespace Homework_Components
             this.OnMousePress?.Invoke(position);
         }
 
+        void IGameStartElement.StartGame(IGameContext context)
+        {
+            this.enabled = true;
+        }
+
+        void IGameFinishElement.FinishGame(IGameContext context)
+        {
+            this.enabled = false;
+        }
     }
 }
 
