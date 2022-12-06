@@ -11,18 +11,20 @@ namespace Homework_Presentation_Model.Hero
     {
         private PopupManager popupManager;
         private HeroController heroController;
+        private MoneyStorage moneyStorage;
 
         [Button]
         public void ShowPopup()
         {
-            Storage.Hero hero = heroController.GetHero;
-            popupManager.ShowPopup(PopupType.HeroUpgrade, hero);
+            HeroPresentationModel heroPresentationModel = new HeroPresentationModel(heroController, moneyStorage);
+            popupManager.ShowPopup(PopupType.HeroUpgrade, heroPresentationModel);
         }
 
         void IGameInitElement.InitGame(IGameContext context)
         {
             this.popupManager = context.GetService<PopupManager>();
             this.heroController = context.GetService<HeroController>();
+            this.moneyStorage = context.GetService<MoneyStorage>();
         }
     }
 }

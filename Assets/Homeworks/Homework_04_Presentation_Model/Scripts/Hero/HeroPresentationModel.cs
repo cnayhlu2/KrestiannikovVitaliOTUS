@@ -9,6 +9,9 @@ namespace Homework_Presentation_Model.Hero
     {
         public event Action<bool> OnBuyButtonStateChanged;
 
+        private readonly HeroController heroController;
+        private readonly MoneyStorage moneyStorage;
+        
         public HeroPresentationModel(HeroController heroController, MoneyStorage moneyStorage)
         {
             this.heroController = heroController;
@@ -17,10 +20,14 @@ namespace Homework_Presentation_Model.Hero
 
         public void Start()
         {
+            this.heroController.OnHeroChange += HeroChange;
+            this.moneyStorage.OnMoneyChanged += MoneyChange;
         }
 
         public void Stop()
         {
+            this.heroController.OnHeroChange -= HeroChange;
+            this.moneyStorage.OnMoneyChanged -= MoneyChange;
         }
 
         public string GetName() => heroController.GetHero.Name;
@@ -36,16 +43,22 @@ namespace Homework_Presentation_Model.Hero
             return moneyStorage.CanSpendMoney(heroController.LevelCost) && heroController.CanHeroUpgrade();
         }
 
-        public void OnBuyClicked()
+        public void OnUpgradeClicked()
         {
             moneyStorage.SpendMoney(heroController.LevelCost);
             heroController.LevelUpHero();
         }
-
-        private HeroController heroController;
-        private MoneyStorage moneyStorage;
-        private IHomework_Presentation_Model homeworkImplementation;
-        private IHomework_Presentation_Model homeworkImplementation1;
+        
+        private void HeroChange(Storage.Hero obj)
+        {
+            OnBuyButtonStateChanged?.Invoke(CanUpgrade());
+        }
+        
+        private void MoneyChange(int obj)
+        {
+            OnBuyButtonStateChanged?.Invoke(CanUpgrade());
+        }
+        
     }
 
     public interface IHomework_Presentation_Model
@@ -65,6 +78,6 @@ namespace Homework_Presentation_Model.Hero
 
         bool CanUpgrade();
 
-        void OnBuyClicked();
+        void OnUpgradeClicked();
     }
 }

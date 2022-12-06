@@ -222,6 +222,8 @@ GameObject:
   - component: {fileID: 8068576143243268380}
   - component: {fileID: 8936573517854951380}
   - component: {fileID: 4821313854945718723}
+  - component: {fileID: 6660518719036917340}
+  - component: {fileID: 3927416227897678785}
   m_Layer: 5
   m_Name: MoneyWidget
   m_TagString: Untagged
@@ -289,3 +291,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.7
+--- !u!114 &6660518719036917340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8311427947077622947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e0bf04a0e4472186f26afbb622af77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyLabel: {fileID: 6351093188761870813}
+--- !u!114 &3927416227897678785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8311427947077622947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce3b8f386004333887c48f27023078f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

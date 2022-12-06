@@ -1442,10 +1442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d71926173c6344784e52d3a60d6c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: {fileID: 0}
-  level: {fileID: 0}
-  damage: {fileID: 0}
-  upgradeButton: {fileID: 0}
+  heroName: {fileID: 4477350161144838550}
+  level: {fileID: 580871108273152670}
+  damage: {fileID: 5734319557211582165}
+  upgradeButton: {fileID: 6032563628611790128}
 --- !u!1 &9182860410651749142
 GameObject:
   m_ObjectHideFlags: 0

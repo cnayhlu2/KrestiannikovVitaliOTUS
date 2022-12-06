@@ -243,8 +243,10 @@ MonoBehaviour:
   - {fileID: 1317132878}
   - {fileID: 1615276526}
   - {fileID: 1644138021}
+  - {fileID: 2669326567267393462}
   gameElements:
   - {fileID: 1527670433}
+  - {fileID: 2669326567267393461}
 --- !u!1 &475376456
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +807,8 @@ MonoBehaviour:
   damagePerLevel: 10
   heroStartName: Shiko
   heroStartLevel: 1
+  maxLevel: 10
+  levelCost: 100
   hero:
     name: Shiko
     level: 1
@@ -1080,6 +1084,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8068576143243268380, guid: 15d7a5fd3bcf4af4cb8e6056d82c9f85, type: 3}
   m_PrefabInstance: {fileID: 2669326567267393459}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2669326567267393461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3927416227897678785, guid: 15d7a5fd3bcf4af4cb8e6056d82c9f85, type: 3}
+  m_PrefabInstance: {fileID: 2669326567267393459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce3b8f386004333887c48f27023078f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2669326567267393462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6660518719036917340, guid: 15d7a5fd3bcf4af4cb8e6056d82c9f85, type: 3}
+  m_PrefabInstance: {fileID: 2669326567267393459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e0bf04a0e4472186f26afbb622af77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9028953666449936111
 PrefabInstance:
   m_ObjectHideFlags: 0
