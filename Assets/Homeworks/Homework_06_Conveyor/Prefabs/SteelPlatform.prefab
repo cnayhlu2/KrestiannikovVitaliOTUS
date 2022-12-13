@@ -757,6 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7692599853806408672}
   - component: {fileID: 8404061551715848000}
+  - component: {fileID: 3375945535382158170}
   m_Layer: 0
   m_Name: SteelPlatform
   m_TagString: Untagged
@@ -798,7 +799,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7692599853806408677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d05755f21694d2196d9086af65ea4aa, type: 3}
+  m_Script: {fileID: 11500000, guid: beea0ebace68479e92dafe9bf6ffb823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storage: {fileID: 0}
+  visual: {fileID: 3375945535382158170}
+--- !u!114 &3375945535382158170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7692599853806408677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b54010aaaa4ca086f7ac93138d9c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   items:

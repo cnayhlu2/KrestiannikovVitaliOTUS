@@ -414,6 +414,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6288186854894896681}
   - component: {fileID: 3959487489055487730}
+  - component: {fileID: 1019687967258969171}
+  - component: {fileID: 5765468266007500028}
   m_Layer: 0
   m_Name: Widget
   m_TagString: Untagged
@@ -450,6 +452,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4466340004727694877}
   m_CullTransparentMesh: 1
+--- !u!114 &1019687967258969171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466340004727694877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d468baeae584ce2aef0c7a04dd66423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 5765468266007500028}
+  conveyorWorker: {fileID: 0}
+--- !u!114 &5765468266007500028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466340004727694877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75e1619cdf447ab9f852a1157534e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressBar: {fileID: 8460009408239920129}
+  root: {fileID: 6487507256750631807}
 --- !u!1 &6487507256750631807
 GameObject:
   m_ObjectHideFlags: 0

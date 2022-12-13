@@ -1172,6 +1172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6398938084239426214}
   - component: {fileID: 5092792672433708550}
+  - component: {fileID: 419919894045302034}
   m_Layer: 0
   m_Name: CoalPlatform
   m_TagString: Untagged
@@ -1225,7 +1226,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6398938084239426211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d05755f21694d2196d9086af65ea4aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 94b54010aaaa4ca086f7ac93138d9c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   items:
@@ -1250,6 +1251,20 @@ MonoBehaviour:
   - {fileID: 8944573423737109381}
   - {fileID: 4056734721292831644}
   - {fileID: 8188941308372445453}
+--- !u!114 &419919894045302034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6398938084239426211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beea0ebace68479e92dafe9bf6ffb823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storage: {fileID: 0}
+  visual: {fileID: 5092792672433708550}
 --- !u!1 &6434499978853481398
 GameObject:
   m_ObjectHideFlags: 0
