@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Homework_Presentation_Model.Hero
 {
-    public class HeroPresentationModel : IHomework_Presentation_Model
+    public class HeroPresentationModel : IHeroPresentationModel
     {
         public event Action<bool> OnBuyButtonStateChanged;
 
@@ -61,7 +61,7 @@ namespace Homework_Presentation_Model.Hero
         
     }
 
-    public interface IHomework_Presentation_Model
+    public interface IHeroPresentationModel
     {
         event Action<bool> OnBuyButtonStateChanged;
 

@@ -15,19 +15,19 @@ namespace Homework_Presentation_Model.Popups
 
         [SerializeField] private BuyButton upgradeButton;
 
-        private IHomework_Presentation_Model presentationModel;
+        private IHeroPresentationModel presentationModel;
 
         protected override void OnShow(object args)
         {
-            if (args is not IHomework_Presentation_Model presentationModel)
+            if (args is not IHeroPresentationModel heroPresentationModel)
             {
                 throw new Exception("wrong args");
             }
 
-            this.presentationModel = presentationModel;
+            this.presentationModel = heroPresentationModel;
             this.presentationModel.OnBuyButtonStateChanged += ButtonStateChanged;
             this.presentationModel.Start();
-            this.upgradeButton.SetPrice(presentationModel.GetUpgradeCost());
+            this.upgradeButton.SetPrice(heroPresentationModel.GetUpgradeCost());
             this.upgradeButton.AddListener(OnUpgradeClick);
             UpdateViewData();
         }
