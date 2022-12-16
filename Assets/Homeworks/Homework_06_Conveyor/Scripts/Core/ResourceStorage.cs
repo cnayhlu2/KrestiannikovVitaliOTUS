@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Homework_06_Conveyor.Core
 {
+    [System.Serializable]
     public class ResourceStorage : MonoBehaviour
     {
         [SerializeField] private SerializedDictionary resources = new();

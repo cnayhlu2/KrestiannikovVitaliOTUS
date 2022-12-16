@@ -4381,7 +4381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 1
-  storage: {fileID: 1027684914}
+  resourceStorage: {fileID: 1027684914}
   visual: {fileID: 238887284765977167}
 --- !u!33 &4792232858066122832
 MeshFilter:
@@ -4791,7 +4791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 2
-  storage: {fileID: 1027684914}
+  resourceStorage: {fileID: 1027684914}
   visual: {fileID: 939524507211915359}
 --- !u!1 &6487507255640030559
 GameObject:
@@ -4824,7 +4824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 0
-  storage: {fileID: 1027684914}
+  resourceStorage: {fileID: 1027684914}
   visual: {fileID: 2188929443618822086}
 --- !u!1 &6714218015558047953
 GameObject:
