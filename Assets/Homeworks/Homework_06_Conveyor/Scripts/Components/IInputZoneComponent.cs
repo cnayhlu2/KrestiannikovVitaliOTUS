@@ -2,7 +2,7 @@
 {
     public interface IInputZoneComponent
     {
-        bool CanUnload();
-        int UnloadAll();
+        bool CanUnload(ResourceType resourceType);
+        int UnloadAll(ResourceType resourceType);
     }
 }

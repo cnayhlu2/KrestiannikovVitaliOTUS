@@ -1,22 +1,20 @@
-﻿using Elementary;
+﻿using Homework_06_Conveyor.Core;
 using UnityEngine;
 
 namespace Homework_06_Conveyor.Components
 {
     public class InputZoneComponent : MonoBehaviour, IInputZoneComponent
     {
-        [SerializeField] private LimitedIntBehavior inputStorage;
+        [SerializeField] private ResourceStorage resourceStorage;
 
-        bool IInputZoneComponent.CanUnload()
+        bool IInputZoneComponent.CanUnload(ResourceType resourceType)
         {
-            return inputStorage.Value == 0;
+            return resourceStorage.CanUnload(resourceType);
         }
 
-        int IInputZoneComponent.UnloadAll()
+        int IInputZoneComponent.UnloadAll(ResourceType resourceType)
         {
-            int count = inputStorage.Value;
-            inputStorage.Value = 0;
-            return count;
+            return resourceStorage.UnloadAll(resourceType);
         }
     }
 }

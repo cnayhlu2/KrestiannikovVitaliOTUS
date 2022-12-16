@@ -1,15 +1,17 @@
-﻿using Elementary;
+﻿using System.Collections.Generic;
+using Elementary;
+using Homework_06_Conveyor.Core;
 using UnityEngine;
 
 namespace Homework_06_Conveyor
 {
     public class ConveyorMechanic : MonoBehaviour
     {
-        [SerializeField] private LimitedIntBehavior firstStorage;
-        [SerializeField] private LimitedIntBehavior secondStorage;
-        [SerializeField] private TimerBehaviour worker;
+        [SerializeField] private List<ResourceType> inputResources = new();
+        [SerializeField] private List<ResourceType> outputResources = new();
 
-        [SerializeField] private LimitedIntBehavior outputStorage;
+        [SerializeField] private ResourceStorage resourceStorage;
+        [SerializeField] private TimerBehaviour worker;
 
         private void OnEnable()
         {
@@ -31,8 +33,11 @@ namespace Homework_06_Conveyor
 
         private void StartWork()
         {
-            this.firstStorage.Value--;
-            this.secondStorage.Value--;
+            foreach (var inputResource in inputResources)
+            {
+                resourceStorage.Unload(inputResource, 1);
+            }
+
             worker.ResetTime();
             worker.Play();
         }
@@ -40,12 +45,12 @@ namespace Homework_06_Conveyor
 
         private bool CanWork()
         {
-            if (firstStorage.Value == 0)
-                return false;
-            if (secondStorage.Value == 0)
-                return false;
-            if (outputStorage.IsLimit)
-                return false;
+            foreach (var inputResource in inputResources)
+                if (!resourceStorage.CanUnload(inputResource))
+                    return false;
+            foreach (var outputResource in outputResources)
+                if (!resourceStorage.CanLoad(outputResource))
+                    return false;
             if (worker.IsPlaying)
                 return false;
 
@@ -54,7 +59,8 @@ namespace Homework_06_Conveyor
 
         private void OnWorkFinish()
         {
-            this.outputStorage.Value++;
+            foreach (var outputResource in outputResources)
+                resourceStorage.TryLoad(outputResource, 1);
         }
     }
 }

@@ -16,17 +16,15 @@ namespace Homework_06_Conveyor
 
             if (!loadZoneComponent.CanLoad(resourceType))
                 return;
-
             int countUnloaded = loadZoneComponent.TryLoad(resourceType, count);
         }
 
         [Button]
-        void TryGetSteel()
+        void TryGetSteel(ResourceType resourceType)
         {
             IInputZoneComponent inputZoneComponent = conveyor.Get<IInputZoneComponent>();
-            if(inputZoneComponent.CanUnload())
-                return;
-            inputZoneComponent.UnloadAll();
+            if (inputZoneComponent.CanUnload(resourceType))
+                inputZoneComponent.UnloadAll(resourceType);
         }
     }
 }

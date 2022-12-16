@@ -9,7 +9,7 @@
         /// </summary>
         /// <param name="resourceType"></param>
         /// <param name="count"></param>
-        /// <returns>count of unloaded resources</returns>
+        /// <returns>count of not loaded resources</returns>
         int TryLoad(ResourceType resourceType, int count);
     }
 }

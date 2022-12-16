@@ -384,11 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419302212c1b4048b02d1067f924f390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceStorages:
-  - storage: {fileID: 1583806503}
-    type: 0
-  - storage: {fileID: 736692511}
-    type: 1
+  resourceStorage: {fileID: 1027684914}
 --- !u!1 &312256720
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dabf815b80457cbbc204f59a487508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputStorage: {fileID: 2035752531}
+  resourceStorage: {fileID: 1027684914}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,53 +806,6 @@ Transform:
   m_Father: {fileID: 1611289380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &736692509
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 736692510}
-  - component: {fileID: 736692511}
-  m_Layer: 0
-  m_Name: OreStorage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &736692510
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736692509}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1999637679}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &736692511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736692509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6b8718752441d18c1ab36a0143547e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source:
-    maxValue: 21
-    currentValue: 0
 --- !u!1 &855306991
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1999637679}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &855306993
 MonoBehaviour:
@@ -915,10 +864,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16de03a609844e482288fded044f70d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstStorage: {fileID: 1583806503}
-  secondStorage: {fileID: 736692511}
+  inputResources: 0000000001000000
+  outputResources: 02000000
+  resourceStorage: {fileID: 1027684914}
   worker: {fileID: 855306993}
-  outputStorage: {fileID: 2035752531}
 --- !u!1 &865264260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1035,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1027684912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027684913}
+  - component: {fileID: 1027684914}
+  m_Layer: 0
+  m_Name: ResourceStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027684913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027684912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1999637679}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1027684914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027684912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4e262571244d378477c8b6ed04ec5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+    keyData: 000000000100000002000000
+    valueData:
+    - maxValue: 21
+      currentValue: 0
+    - maxValue: 21
+      currentValue: 0
+    - maxValue: 9
+      currentValue: 0
 --- !u!1 &1144718543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,53 +1133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conveyor: {fileID: 13457701}
---- !u!1 &1583806501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1583806502}
-  - component: {fileID: 1583806503}
-  m_Layer: 0
-  m_Name: CoalStorage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1583806502
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583806501}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1999637679}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1583806503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583806501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6b8718752441d18c1ab36a0143547e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source:
-    maxValue: 21
-    currentValue: 0
 --- !u!1 &1611289379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,60 +1498,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1583806502}
-  - {fileID: 736692510}
-  - {fileID: 2035752530}
   - {fileID: 855306992}
+  - {fileID: 1027684913}
   m_Father: {fileID: 13457700}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2035752529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2035752530}
-  - component: {fileID: 2035752531}
-  m_Layer: 0
-  m_Name: SteelStorage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2035752530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035752529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1999637679}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2035752531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035752529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6b8718752441d18c1ab36a0143547e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source:
-    maxValue: 9
-    currentValue: 0
 --- !u!1 &2095869104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,7 +4380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea0ebace68479e92dafe9bf6ffb823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storage: {fileID: 736692511}
+  resourceType: 1
+  storage: {fileID: 1027684914}
   visual: {fileID: 238887284765977167}
 --- !u!33 &4792232858066122832
 MeshFilter:
@@ -4883,7 +4790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea0ebace68479e92dafe9bf6ffb823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storage: {fileID: 2035752531}
+  resourceType: 2
+  storage: {fileID: 1027684914}
   visual: {fileID: 939524507211915359}
 --- !u!1 &6487507255640030559
 GameObject:
@@ -4915,7 +4823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea0ebace68479e92dafe9bf6ffb823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storage: {fileID: 1583806503}
+  resourceType: 0
+  storage: {fileID: 1027684914}
   visual: {fileID: 2188929443618822086}
 --- !u!1 &6714218015558047953
 GameObject:
