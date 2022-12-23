@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Homeworks/Homework_05_Save_Load/LoadingScene.unity
+    guid: e62373b46615ee348b4367b96165b002
+  - enabled: 1
+    path: Assets/Homeworks/Homework_05_Save_Load/UpgradesScene.unity
+    guid: ae201847a7664c34ba9f248d4984237b
   m_configObjects: {}
