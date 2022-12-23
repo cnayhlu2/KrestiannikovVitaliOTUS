@@ -35,6 +35,7 @@ MonoBehaviour:
     - GameElements
     - Entities
     - Sirenix.OdinInspector.CompatibilityLayer
+    - ServiceLocator
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - SimpleFolderIcon
     - Sirenix.OdinInspector.Modules.UnityMathematics
