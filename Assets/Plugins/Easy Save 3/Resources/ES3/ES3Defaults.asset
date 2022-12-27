@@ -29,14 +29,17 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
+    - Zenject
+    - ServiceLocator
     - Assembly-CSharp-firstpass
     - Elementary
     - Assembly-CSharp
+    - Zenject-IntegrationTests
     - GameElements
     - Entities
     - Sirenix.OdinInspector.CompatibilityLayer
-    - ServiceLocator
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
+    - Zenject-TestFramework
     - SimpleFolderIcon
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
