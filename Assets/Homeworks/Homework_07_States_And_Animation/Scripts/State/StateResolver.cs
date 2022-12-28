@@ -5,7 +5,7 @@ namespace Homework_States.State
 {
     public sealed class StateResolver : MonoBehaviour
     {
-        [SerializeField] private StateMachine stateMachine;
+        [SerializeField] private CharacterStateMachine stateMachine;
         [SerializeField] private MoveEngine moveEngine;
 
         private void OnEnable()

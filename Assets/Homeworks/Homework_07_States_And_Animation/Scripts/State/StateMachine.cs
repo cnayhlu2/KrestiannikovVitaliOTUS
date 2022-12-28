@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace Homework_States.State
 {
-    public sealed class StateMachine : State
+    public abstract class StateMachine<T> : State where T : Enum
     {
-        public StateType CurrentStateType => this.currentStateType;
+        public T CurrentStateType => this.currentStateType;
 
-        [SerializeField] private StateType currentStateType;
+        [SerializeField] private T currentStateType;
 
         [SerializeField] private bool enterOnEnable;
         [SerializeField] private bool exitOnDisable;
 
-        [SerializeField] private StateDictionary states = new();
+        [SerializeField] private StateDictionary<T> states = new();
         private State currentState;
 
         private void OnEnable()
@@ -50,7 +50,7 @@ namespace Homework_States.State
             }
         }
 
-        public void SwitchState(StateType type)
+        public void SwitchState(T type)
         {
             Debug.Log("SwitchState");
             this.Exit();
@@ -60,7 +60,7 @@ namespace Homework_States.State
     }
 
     [Serializable]
-    public class StateDictionary : UnitySerializedDictionary<StateType, State>
+    public class StateDictionary<T> : UnitySerializedDictionary<T, State> where T : Enum
     {
     }
 }
