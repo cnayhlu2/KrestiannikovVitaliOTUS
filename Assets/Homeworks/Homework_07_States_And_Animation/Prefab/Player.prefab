@@ -470,7 +470,7 @@ Animator:
   m_GameObject: {fileID: 2462982128820430162}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 798a023bbc8a35e499ba0a24d089a1ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -629,8 +629,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d502e7bc42354322bab480b8e9577a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSystem: {fileID: 0}
-  createProjectileKey: 
+  animationSystem: {fileID: 3728329533307737865}
+  createProjectileKey: shoot
+  shootingEnd: shooting_end
+  attacker: {fileID: 0}
   attackPoint: {fileID: 0}
   projectile: {fileID: 0}
 --- !u!1 &5696967534929544834

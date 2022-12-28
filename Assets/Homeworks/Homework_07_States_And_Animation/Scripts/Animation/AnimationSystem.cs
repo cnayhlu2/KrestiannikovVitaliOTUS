@@ -15,12 +15,10 @@ namespace Homework_States.Animation
 
         [SerializeField] private Animator animator;
         [SerializeField] private AnimatorEventDispatcher eventDispatcher;
-        [SerializeField] private AnimationStateMachine stateMachine;
 
         public void SwitchState(AnimationStateType stateType)
         {
             this.animator.SetInteger(State, (int) stateType);
-            this.stateMachine.SwitchState(stateType);
         }
     }
 }

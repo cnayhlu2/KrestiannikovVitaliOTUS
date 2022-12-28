@@ -1,4 +1,5 @@
-﻿using Homework_States.Animation;
+﻿using Elementary;
+using Homework_States.Animation;
 using UnityEngine;
 
 namespace Homework_States.State
@@ -7,8 +8,10 @@ namespace Homework_States.State
     {
         [SerializeField] private AnimationSystem animationSystem;
 
-        [SerializeField] private string createProjectileKey = "";
+        [SerializeField] private string createProjectileKey;
+        [SerializeField] private string shootingEnd;
 
+        [SerializeField] private BoolBehaviour attacker;
         [SerializeField] private Transform attackPoint;
         [SerializeField] private GameObject projectile;
 
@@ -30,6 +33,15 @@ namespace Homework_States.State
             {
                 Shoot();
             }
+            else if (key == shootingEnd)
+            {
+                StopShoot();
+            }
+        }
+
+        private void StopShoot()
+        {
+            this.attacker.AssignFalse();
         }
 
         private void Shoot()
