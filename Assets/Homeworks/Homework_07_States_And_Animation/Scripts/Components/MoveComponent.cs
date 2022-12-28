@@ -2,7 +2,7 @@
 using Homework_States.Core;
 using UnityEngine;
 
-namespace Homeworks.Homework_07_States_And_Animation.Scripts.Components
+namespace Homework_States.Components
 {
     public class MoveComponent : MonoBehaviour, IMoveComponent
     {
