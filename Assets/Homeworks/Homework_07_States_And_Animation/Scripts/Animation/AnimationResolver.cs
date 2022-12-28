@@ -1,4 +1,5 @@
 ﻿using System;
+using Homework_States.State;
 using UnityEngine;
 
 namespace Homework_States.Animation
@@ -7,19 +8,41 @@ namespace Homework_States.Animation
     {
         [SerializeField] private AnimationSystem animationSystem;
         [SerializeField] private AnimationStateMachine stateMachine;
+        [SerializeField] private CharacterStateMachine characterStateMachine;
 
-        
         private void Awake()
         {
+            this.UpdateState(AnimationStateType.IDLE);
         }
 
         private void OnEnable()
         {
+            this.characterStateMachine.OnStateChange += OnCharacterStateChange;
         }
 
         private void OnDisable()
         {
+            this.characterStateMachine.OnStateChange -= OnCharacterStateChange;
         }
+
+        private void OnCharacterStateChange(StateType stateType)
+        {
+            switch (stateType)
+            {
+                case StateType.IDLE:
+                    UpdateState(AnimationStateType.IDLE);
+                    break;
+                case StateType.MOVE:
+                    UpdateState(AnimationStateType.MOVE);
+                    break;
+                case StateType.SHOOT:
+                    if(stateMachine.CurrentStateType==AnimationStateType.MOVE)
+                        UpdateState(AnimationStateType.IDLE);
+                    UpdateState(AnimationStateType.SHOOT);
+                    break;
+            }
+        }
+
 
         private void UpdateState(AnimationStateType stateType)
         {

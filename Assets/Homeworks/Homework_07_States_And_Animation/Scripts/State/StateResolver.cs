@@ -9,8 +9,8 @@ namespace Homework_States.State
         [SerializeField] private CharacterStateMachine stateMachine;
         [SerializeField] private MoveEngine moveEngine;
         [SerializeField] private BoolBehaviour attacker;
-        
-        
+
+
         private void OnEnable()
         {
             this.attacker.OnValueChanged += AttackerStateChange;
@@ -27,10 +27,12 @@ namespace Homework_States.State
 
         private void AttackerStateChange(bool isActive)
         {
-            if (isActive && this.stateMachine.CurrentStateType!=StateType.SHOOT)
+            Debug.Log($"AttackerStateChange {isActive}");
+            if (isActive && this.stateMachine.CurrentStateType != StateType.SHOOT)
             {
                 this.stateMachine.SwitchState(StateType.SHOOT);
-            } else if (!isActive && this.stateMachine.CurrentStateType == StateType.SHOOT)
+            }
+            else if (!isActive && this.stateMachine.CurrentStateType == StateType.SHOOT)
             {
                 this.stateMachine.SwitchState(StateType.IDLE);
             }

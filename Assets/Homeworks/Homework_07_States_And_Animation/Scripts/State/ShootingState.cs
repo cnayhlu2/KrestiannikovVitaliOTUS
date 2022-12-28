@@ -29,6 +29,7 @@ namespace Homework_States.State
 
         private void OnEventReceived(string key)
         {
+            Debug.Log($"OnEventReceived {key}");
             if (createProjectileKey == key)
             {
                 Shoot();

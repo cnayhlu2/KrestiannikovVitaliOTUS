@@ -6,6 +6,8 @@ namespace Homework_States.State
 {
     public abstract class StateMachine<T> : State where T : Enum
     {
+        public event Action<T> OnStateChange;
+
         public T CurrentStateType => this.currentStateType;
 
         [SerializeField] private T currentStateType;
@@ -56,6 +58,7 @@ namespace Homework_States.State
             this.Exit();
             this.currentStateType = type;
             this.Enter();
+            OnStateChange?.Invoke(type);
         }
     }
 
