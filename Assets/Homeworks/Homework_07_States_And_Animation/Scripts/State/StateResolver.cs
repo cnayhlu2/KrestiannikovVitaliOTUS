@@ -27,7 +27,6 @@ namespace Homework_States.State
 
         private void AttackerStateChange(bool isActive)
         {
-            Debug.Log($"AttackerStateChange {isActive}");
             if (isActive && this.stateMachine.CurrentStateType != StateType.SHOOT)
             {
                 this.stateMachine.SwitchState(StateType.SHOOT);

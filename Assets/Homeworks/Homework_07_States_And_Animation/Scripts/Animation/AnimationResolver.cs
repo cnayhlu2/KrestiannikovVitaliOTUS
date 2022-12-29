@@ -36,8 +36,6 @@ namespace Homework_States.Animation
                     UpdateState(AnimationStateType.MOVE);
                     break;
                 case StateType.SHOOT:
-                    if(stateMachine.CurrentStateType==AnimationStateType.MOVE)
-                        UpdateState(AnimationStateType.IDLE);
                     UpdateState(AnimationStateType.SHOOT);
                     break;
             }

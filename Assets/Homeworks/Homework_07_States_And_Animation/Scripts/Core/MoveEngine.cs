@@ -42,13 +42,11 @@ namespace Homework_States.Core
 
         private void StartMove()
         {
-            Debug.Log("StartMove");
             OnStartMove?.Invoke();
         }
 
         private void StopMove()
         {
-            Debug.Log("StopMove");
             OnStopMove?.Invoke();
         }
     }

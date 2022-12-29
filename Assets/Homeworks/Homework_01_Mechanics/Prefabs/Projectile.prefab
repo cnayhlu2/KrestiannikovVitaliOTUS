@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionEngine: {fileID: 4380321842281514443}
-  speed: 2
+  speed: 20
 --- !u!1 &114617687
 GameObject:
   m_ObjectHideFlags: 0

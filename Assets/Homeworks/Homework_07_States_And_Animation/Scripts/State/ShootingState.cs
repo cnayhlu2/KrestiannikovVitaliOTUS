@@ -17,15 +17,16 @@ namespace Homework_States.State
 
         public override void Enter()
         {
+            Debug.Log("Enter");
             this.animationSystem.OnEventReceived += OnEventReceived;
         }
 
 
         public override void Exit()
         {
-            this.animationSystem.OnEventReceived += OnEventReceived;
+            Debug.Log("Enter");
+            this.animationSystem.OnEventReceived -= OnEventReceived;
         }
-
 
         private void OnEventReceived(string key)
         {
