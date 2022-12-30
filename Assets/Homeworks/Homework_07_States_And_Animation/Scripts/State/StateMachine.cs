@@ -54,7 +54,6 @@ namespace Homework_States.State
 
         public void SwitchState(T type)
         {
-            Debug.Log($"SwitchState");
             this.Exit();
             this.currentStateType = type;
             this.Enter();

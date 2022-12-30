@@ -13,12 +13,14 @@ namespace Homework_States.Animation
             remove => this.eventDispatcher.OnEventReceived -= value;
         }
 
+        [SerializeField] private AnimationStateMachine stateMachine;
         [SerializeField] private Animator animator;
         [SerializeField] private AnimatorEventDispatcher eventDispatcher;
 
         public void SwitchState(AnimationStateType stateType)
         {
             this.animator.SetInteger(State, (int) stateType);
+            this.stateMachine.SwitchState(stateType);
         }
     }
 }

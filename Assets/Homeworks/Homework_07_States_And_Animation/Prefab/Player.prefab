@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStateType: 0
-  enterOnEnable: 0
-  exitOnDisable: 0
+  enterOnEnable: 1
+  exitOnDisable: 1
   states:
     keyData: 000000000100000002000000
     valueData:
@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 8446087272948724588}
   - component: {fileID: 5118201585403786632}
   - component: {fileID: 4381131606216795787}
+  - component: {fileID: 1759531454630669479}
   m_Layer: 0
   m_Name: MOVE
   m_TagString: Untagged
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - {fileID: 4381131606216795787}
+  - {fileID: 1759531454630669479}
 --- !u!114 &4381131606216795787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +173,20 @@ MonoBehaviour:
     baseValue: 3
     monoValue: {fileID: 0}
     scriptableValue: {fileID: 0}
+--- !u!114 &1759531454630669479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2355068671158592573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b80f7c4139e4d35b2d6168b9eb0b742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSystem: {fileID: 5663189362663513854}
+  stateType: 1
 --- !u!1 &2462982128261030476
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +197,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2462982128261030475}
   - component: {fileID: 4733705299581053563}
+  - component: {fileID: 8843278172749130080}
+  - component: {fileID: 7998628891565530647}
   m_Layer: 0
   m_Name: Attacker
   m_TagString: Untagged
@@ -216,6 +234,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!114 &8843278172749130080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462982128261030476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b7e269130e4b1bac94f9a2885436bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shoot: {fileID: 7998628891565530647}
+  attackPoint: {fileID: 1266861386078504776}
+  projectile: {fileID: 8179597669185432674, guid: a178f45fefd437d4da9d2030abb1ee00, type: 3}
+--- !u!114 &7998628891565530647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462982128261030476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ce1d2c9b2b4a2bae36618cb7933d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2462982128365177773
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +317,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2462982128470133214}
-  - component: {fileID: 5394415739636026069}
   m_Layer: 0
   m_Name: '[VISUAL]'
   m_TagString: Untagged
@@ -296,20 +340,6 @@ Transform:
   m_Father: {fileID: 2462982128536069546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5394415739636026069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2462982128470133215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc570ad6a5e49b6966e593c9902334a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 3309168627295215492}
-  eventDispatcher: {fileID: 5033269789270484004}
 --- !u!1 &2462982128536069547
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +512,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8902859037345515558}
   - component: {fileID: 129218306079769002}
+  - component: {fileID: 2333963408066803538}
+  - component: {fileID: 2476507282104154214}
   m_Layer: 0
   m_Name: SHOOT
   m_TagString: Untagged
@@ -516,7 +548,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd402fbdef04ee0948039e772f4e4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  states: []
+  states:
+  - {fileID: 2333963408066803538}
+  - {fileID: 2476507282104154214}
+--- !u!114 &2333963408066803538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816356743128118506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7244b5d62623427d948e91a10e83ea5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSystem: {fileID: 5663189362663513854}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7998628891565530647}
+        m_TargetAssemblyTypeName: Elementary.EventReceiver, Elementary
+        m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  eventKey: shoot
+--- !u!114 &2476507282104154214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816356743128118506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7244b5d62623427d948e91a10e83ea5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSystem: {fileID: 5663189362663513854}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4733705299581053563}
+        m_TargetAssemblyTypeName: Elementary.BoolBehaviour, Elementary
+        m_MethodName: AssignFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  eventKey: shooting_end
 --- !u!1 &3990812644484527519
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7152578416621760963}
   - component: {fileID: 660388051280464365}
+  - component: {fileID: 3405461237198070782}
   m_Layer: 0
   m_Name: IDLE
   m_TagString: Untagged
@@ -561,7 +654,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd402fbdef04ee0948039e772f4e4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  states: []
+  states:
+  - {fileID: 3405461237198070782}
+--- !u!114 &3405461237198070782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3990812644484527519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b80f7c4139e4d35b2d6168b9eb0b742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSystem: {fileID: 5663189362663513854}
+  stateType: 0
 --- !u!1 &4195386720511600926
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5293262542730674338}
   - component: {fileID: 4903471864296921199}
-  - component: {fileID: 6574666841885680473}
+  - component: {fileID: 1758604676601032600}
   m_Layer: 0
   m_Name: Shoot
   m_TagString: Untagged
@@ -608,8 +716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states:
-  - {fileID: 6574666841885680473}
---- !u!114 &6574666841885680473
+  - {fileID: 1758604676601032600}
+--- !u!114 &1758604676601032600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -618,15 +726,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4195386720511600926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d502e7bc42354322bab480b8e9577a0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b80f7c4139e4d35b2d6168b9eb0b742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSystem: {fileID: 5394415739636026069}
-  createProjectileKey: shoot
-  shootingEnd: shooting_end
-  attacker: {fileID: 4733705299581053563}
-  attackPoint: {fileID: 1266861386078504776}
-  projectile: {fileID: 8179597669185432674, guid: a178f45fefd437d4da9d2030abb1ee00, type: 3}
+  animationSystem: {fileID: 5663189362663513854}
+  stateType: 2
 --- !u!1 &5317602779454531481
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,8 +785,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3238790572795890853}
+  - component: {fileID: 5663189362663513854}
   - component: {fileID: 3970040174284925643}
-  - component: {fileID: 8860761942987506402}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -708,6 +812,21 @@ Transform:
   m_Father: {fileID: 2462982128536069546}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5663189362663513854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450367324074798178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc570ad6a5e49b6966e593c9902334a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 3970040174284925643}
+  animator: {fileID: 3309168627295215492}
+  eventDispatcher: {fileID: 5033269789270484004}
 --- !u!114 &3970040174284925643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,21 +848,6 @@ MonoBehaviour:
     - {fileID: 398533296487286893}
     - {fileID: 2618477507245200132}
     - {fileID: 129218306079769002}
---- !u!114 &8860761942987506402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450367324074798178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35361bea695f4361b052c4e2f276be99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationSystem: {fileID: 5394415739636026069}
-  stateMachine: {fileID: 3970040174284925643}
-  characterStateMachine: {fileID: 7729517618656781206}
 --- !u!1 &7918638064094482081
 GameObject:
   m_ObjectHideFlags: 0
