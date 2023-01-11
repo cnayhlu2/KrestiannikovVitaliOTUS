@@ -5,12 +5,14 @@ namespace Homework_States.State
 {
     public class AnimationSwitchState : State
     {
-        [SerializeField] private AnimationSystem animationSystem;
+        private const string State = "State";
+
+        [SerializeField] private Animator animator;
         [SerializeField] private AnimationStateType stateType;
 
         public override void Enter()
         {
-            this.animationSystem.SwitchState(stateType);
+            this.animator.SetInteger(State, (int) stateType);
         }
     }
 }

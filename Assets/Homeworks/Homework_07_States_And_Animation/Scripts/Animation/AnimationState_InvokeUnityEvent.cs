@@ -5,19 +5,19 @@ namespace Homework_States.Animation
 {
     public class AnimationState_InvokeUnityEvent : State.State
     {
-        [SerializeField] private AnimationSystem animationSystem;
+        [SerializeField] private AnimationStateResolver animationStateResolver;
         [SerializeField] private UnityEvent unityEvent;
         [SerializeField] private string eventKey;
 
 
         public override void Enter()
         {
-            this.animationSystem.OnEventReceived += this.OnEvent;
+            this.animationStateResolver.OnEventReceived += this.OnEvent;
         }
 
         public override void Exit()
         {
-            this.animationSystem.OnEventReceived -= this.OnEvent;
+            this.animationStateResolver.OnEventReceived -= this.OnEvent;
         }
 
         private void OnEvent(string key)
