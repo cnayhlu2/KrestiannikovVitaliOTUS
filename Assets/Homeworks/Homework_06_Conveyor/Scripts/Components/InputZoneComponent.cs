@@ -16,5 +16,10 @@ namespace Homework_06_Conveyor.Components
         {
             return resourceStorage.UnloadAll(resourceType);
         }
+
+        void IInputZoneComponent.AddStorageLimit(int size)
+        {
+            resourceStorage.AddStorageLimit(size);
+        }
     }
 }

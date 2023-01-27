@@ -10,7 +10,8 @@ namespace Homework_06_Conveyor
         [SerializeField] private List<ResourceType> inputResources = new();
         [SerializeField] private List<ResourceType> outputResources = new();
 
-        [SerializeField] private ResourceStorage resourceStorage;
+        [SerializeField] private ResourceStorage inputResourceStorage;
+        [SerializeField] private ResourceStorage loadResourceStorage;
         [SerializeField] private TimerBehaviour worker;
 
         private void OnEnable()
@@ -35,7 +36,7 @@ namespace Homework_06_Conveyor
         {
             foreach (var inputResource in inputResources)
             {
-                resourceStorage.Unload(inputResource, 1);
+                inputResourceStorage.Unload(inputResource, 1);
             }
 
             worker.ResetTime();
@@ -46,10 +47,10 @@ namespace Homework_06_Conveyor
         private bool CanWork()
         {
             foreach (var inputResource in inputResources)
-                if (!resourceStorage.CanUnload(inputResource))
+                if (!inputResourceStorage.CanUnload(inputResource))
                     return false;
             foreach (var outputResource in outputResources)
-                if (!resourceStorage.CanLoad(outputResource))
+                if (!loadResourceStorage.CanLoad(outputResource))
                     return false;
             if (worker.IsPlaying)
                 return false;
@@ -60,7 +61,7 @@ namespace Homework_06_Conveyor
         private void OnWorkFinish()
         {
             foreach (var outputResource in outputResources)
-                resourceStorage.TryLoad(outputResource, 1);
+                loadResourceStorage.TryLoad(outputResource, 1);
         }
     }
 }

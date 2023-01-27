@@ -11,13 +11,21 @@ namespace Homework_06_Conveyor.Core
     {
         [SerializeField] private SerializedDictionary resources = new();
 
+        public void AddStorageLimit(int size)
+        {
+            foreach (var resource in this.resources)
+            {
+                resource.Value.MaxValue = resource.Value.MaxValue + size;
+            }
+        }
+
         public LimitedInt GetStorage(ResourceType resourceType)
         {
             if (!resources.ContainsKey(resourceType))
                 throw new Exception($"Do not have storage by type {resourceType}");
             return resources[resourceType];
         }
-        
+
         public bool CanLoad(ResourceType resourceType)
         {
             if (!resources.ContainsKey(resourceType))
