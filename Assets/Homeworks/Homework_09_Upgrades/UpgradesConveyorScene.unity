@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 1693984144}
   - component: {fileID: 1693984145}
   m_Layer: 0
-  m_Name: ConveyorSystem
+  m_Name: ConveyorUpgradeSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

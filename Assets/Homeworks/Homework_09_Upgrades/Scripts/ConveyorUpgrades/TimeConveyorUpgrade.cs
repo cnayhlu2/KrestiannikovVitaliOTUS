@@ -15,25 +15,15 @@ namespace Homework_08_Interaction.ConveyorUpgrades
             this.config = config;
         }
 
-        public override void SetupConveyor(IEntity conveyor)
+        protected override void InitConveyor()
         {
-            base.SetupConveyor(conveyor);
             this.timeComponent = this.conveyor.Get<IConveyorTimeComponent>();
+
         }
 
         protected override void DoUpgrade()
         {
             this.timeComponent.ReduceTime(config.ReduceTime);
         }
-
-        // public void ConstructGame(IGameContext context)
-        // {
-        //     this.service = context.GetService<IConveyorService>();
-        // }
-        //
-        // public void InitGame()
-        // {
-        //     this.timeComponent = service.GetConveyorById(Id).Get<IConveyorTimeComponent>();
-        // }
     }
 }

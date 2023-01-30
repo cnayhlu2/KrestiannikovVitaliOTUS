@@ -25,14 +25,11 @@ namespace Homework_08_Interaction.ConveyorUpgrades
 
         // public void SetId(string conveyorId) => this.Id = conveyorId;
 
-        public virtual void SetupConveyor(IEntity conveyor)
+        public void SetupConveyor(IEntity conveyor)
         {
             this.conveyor = conveyor;
-        }
-        
-        protected ConveyorUpgrade(ConveyorUpgradeConfig config)
-        {
-            this.config = config;
+            InitConveyor();
+            SetUpgradesByLevel();
         }
 
         public void Upgrade()
@@ -47,6 +44,24 @@ namespace Homework_08_Interaction.ConveyorUpgrades
             this.OnUpgrade?.Invoke(currentLevel);
         }
 
+        public void SetLevel(int newLevel)
+        {
+            this.currentLevel = newLevel;
+        }
+
+        protected ConveyorUpgrade(ConveyorUpgradeConfig config)
+        {
+            this.config = config;
+        }
+
         protected abstract void DoUpgrade();
+
+        protected abstract void InitConveyor();
+
+        private void SetUpgradesByLevel()
+        {
+            for (int i = 0; i < Level; i++)
+                DoUpgrade();
+        }
     }
 }

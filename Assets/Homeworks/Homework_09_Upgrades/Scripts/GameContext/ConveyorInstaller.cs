@@ -15,21 +15,6 @@ namespace Homework_08_Interaction.GameContext
         [ShowInInspector] private ConveyorUpgradesManager manager = new();
 
 
-        // public override IEnumerable<object> GetServices()
-        // {
-        //     yield return this.manager;
-        // }
-        //
-        // public override IEnumerable<IGameElement> GetElements()
-        // {
-        //     var elements = this.conveyorUpgradesStorage.GetElements();
-        //
-        //     foreach (var element in elements)
-        //     {
-        //         yield return element;
-        //     }
-        // }
-
         public void ConstructGame(IGameContext context)
         {
             var moneyStorage = context.GetService<MoneyStorage>();

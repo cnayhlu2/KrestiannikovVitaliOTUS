@@ -7,6 +7,7 @@ using Homework_08_Interaction.Configs;
 using Homework_08_Interaction.ConveyorUpgrades;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Homework_08_Interaction.GameContext
 {
@@ -39,21 +40,22 @@ namespace Homework_08_Interaction.GameContext
                     }
                 }
             }
+
             return result;
         }
 
-        public ConveyorUpgrade GetConveyorUpgradeById(string id,int index)
+        public ConveyorUpgrade GetConveyorUpgradeById(string id, int index)
         {
             if (!conveyorsUpgrades.ContainsKey(id))
                 throw new Exception($"storage do not have id {id}");
 
-            if(index<0 || index>conveyorsUpgrades[id].Count)
+            if (index < 0 || index > conveyorsUpgrades[id].Count)
                 throw new Exception($"storage do not have id {id} by index {index}");
 
             return conveyorsUpgrades[id][index];
         }
-        
-        
+
+
         private void CreateUpgrades()
         {
             var conveyors = service.GetAllConveyors();
@@ -65,10 +67,11 @@ namespace Homework_08_Interaction.GameContext
                 foreach (var config in catalog.GetAllConfigs())
                 {
                     var upgrade = config.instantiateUpgrade();
-                    // upgrade.SetId(id);
+                    upgrade.SetLevel(Random.Range(0, config.MaxLevel + 1));
                     upgrade.SetupConveyor(conveyor);
                     upgrades.Add(upgrade);
                 }
+
                 conveyorsUpgrades.Add(conveyor.Get<IIDComponent>().GetId(), upgrades);
             }
         }

@@ -14,10 +14,9 @@ namespace Homework_08_Interaction.ConveyorUpgrades
         {
             this.config = config;
         }
-        
-        public override void SetupConveyor(IEntity conveyor)
+
+        protected override void InitConveyor()
         {
-            base.SetupConveyor(conveyor);
             this.component = this.conveyor.Get<ILoadZoneComponent>();
         }
 
