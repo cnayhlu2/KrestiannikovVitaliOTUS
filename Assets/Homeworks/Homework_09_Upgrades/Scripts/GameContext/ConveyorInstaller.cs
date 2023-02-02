@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Homework_08_Interaction.GameContext
 {
-    public class ConveyorInstaller : MonoBehaviour,IGameConstructElement
+    public class ConveyorInstaller : MonoBehaviour, IGameConstructElement, IGameServiceGroup
     {
         [SerializeField] private ConveyorUpgradeCatalog catalog;
 
@@ -21,6 +21,11 @@ namespace Homework_08_Interaction.GameContext
             var conveyorService = context.GetService<IConveyorService>();
             this.conveyorUpgradesStorage.Constract(conveyorService, catalog);
             this.manager.Construct(conveyorUpgradesStorage, moneyStorage);
+        }
+
+        public IEnumerable<object> GetServices()
+        {
+            yield return this.manager;
         }
     }
 }
