@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Elementary;
-using Homework_06_Conveyor.Core;
+﻿using Homework_06_Conveyor.Core;
 using UnityEngine;
 
 namespace Homework_06_Conveyor.Components
@@ -18,6 +16,10 @@ namespace Homework_06_Conveyor.Components
         {
             return resourceStorage.TryLoad(resourceType, count);
         }
-    }
 
+        void ILoadZoneComponent.AddStorageLimit(int size)
+        {
+            resourceStorage.AddStorageLimit(size);
+        }
+    }
 }

@@ -35,6 +35,7 @@ MonoBehaviour:
     - Elementary
     - Assembly-CSharp
     - Zenject-IntegrationTests
+    - GameSystem
     - GameElements
     - Entities
     - Sirenix.OdinInspector.CompatibilityLayer

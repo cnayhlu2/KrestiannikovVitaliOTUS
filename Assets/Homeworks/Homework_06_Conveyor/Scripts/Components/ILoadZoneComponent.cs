@@ -11,5 +11,7 @@
         /// <param name="count"></param>
         /// <returns>count of not loaded resources</returns>
         int TryLoad(ResourceType resourceType, int count);
+
+        void AddStorageLimit(int size);
     }
 }

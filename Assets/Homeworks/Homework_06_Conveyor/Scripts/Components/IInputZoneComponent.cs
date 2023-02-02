@@ -4,5 +4,7 @@
     {
         bool CanUnload(ResourceType resourceType);
         int UnloadAll(ResourceType resourceType);
+        
+        void AddStorageLimit(int size);
     }
 }
