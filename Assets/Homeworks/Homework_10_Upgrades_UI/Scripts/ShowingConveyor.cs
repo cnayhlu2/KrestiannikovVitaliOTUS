@@ -15,17 +15,14 @@ namespace Homeworks.Homework_10_Upgrades_UI.Scripts
 
 
         [Button]
-        public void ShowPopup()
+        public void ShowPopup(string id)
         {
-            Debug.Log($"{this.upgradesManager == null}");
             popupManager.ShowPopup(PopupType.ConveyorUpgrades, null);
         }
 
 
         void IGameConstructElement.ConstructGame(IGameContext context)
         {
-            Debug.Log(context.GetService<PopupManager>() == null);
-
             this.moneyStorage = context.GetService<MoneyStorage>();
             this.popupManager = context.GetService<PopupManager>();
             this.upgradesManager = context.GetService<ConveyorUpgradesManager>();
