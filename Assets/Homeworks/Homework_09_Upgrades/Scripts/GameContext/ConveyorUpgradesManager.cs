@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Homework_08_Interaction.ConveyorUpgrades;
 using Homework_Presentation_Model.Storage;
 using Sirenix.OdinInspector;
@@ -16,6 +17,10 @@ namespace Homework_08_Interaction.GameContext
             this.moneyStorage = moneyStorage;
         }
 
+        public List<ConveyorUpgrade> GetUpgradesById(string id)
+        {
+            return this.storage.GetConveyorUpgradesById(id);
+        }
 
         public bool CanUpgrade(ConveyorUpgrade upgrade)
         {

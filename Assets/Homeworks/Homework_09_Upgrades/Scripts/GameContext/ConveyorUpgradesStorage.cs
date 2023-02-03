@@ -55,6 +55,14 @@ namespace Homework_08_Interaction.GameContext
             return conveyorsUpgrades[id][index];
         }
 
+        public List<ConveyorUpgrade> GetConveyorUpgradesById(string id)
+        {
+            if (!conveyorsUpgrades.ContainsKey(id))
+                throw new Exception($"storage do not have id {id}");
+
+            return conveyorsUpgrades[id];
+        }
+
 
         private void CreateUpgrades()
         {

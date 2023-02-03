@@ -62,19 +62,22 @@ namespace Homework_Presentation_Model.UI
         {
             this.state = state;
 
-            if (state == State.AVAILABLE)
+            switch (this.state)
             {
-                this.button.interactable = true;
-                this.buttonBackground.sprite = this.availableButtonSprite;
-            }
-            else if (state == State.LOCKED)
-            {
-                this.button.interactable = false;
-                this.buttonBackground.sprite = this.lockedButtonSprite;
-            }
-            else
-            {
-                throw new Exception($"Undefined button state {state}!");
+                case State.MAXED:
+                    this.button.interactable = false;
+                    this.buttonBackground.sprite = this.availableButtonSprite;
+                    break;
+                case State.LOCKED:
+                    this.button.interactable = false;
+                    this.buttonBackground.sprite = this.lockedButtonSprite;
+                    break;
+                case State.AVAILABLE:
+                    this.button.interactable = true;
+                    this.buttonBackground.sprite = this.availableButtonSprite;
+                    break;
+                default:
+                    throw new Exception($"Undefined button state {state}!");
             }
         }
 
@@ -82,6 +85,7 @@ namespace Homework_Presentation_Model.UI
         {
             AVAILABLE,
             LOCKED,
+            MAXED
         }
 
 #if UNITY_EDITOR

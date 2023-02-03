@@ -14,6 +14,11 @@ namespace Homework_08_Interaction.ConveyorUpgrades
         {
             this.config = config;
         }
+        
+        public override string GetStats()
+        {
+            return $"-{config.ReduceTime}";
+        }
 
         protected override void InitConveyor()
         {

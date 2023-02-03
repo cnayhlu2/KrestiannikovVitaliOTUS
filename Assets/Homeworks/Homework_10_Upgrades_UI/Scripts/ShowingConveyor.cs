@@ -9,23 +9,29 @@ namespace Homeworks.Homework_10_Upgrades_UI.Scripts
 {
     public class ShowingConveyor : MonoBehaviour, IGameConstructElement
     {
+        
+
         private PopupManager popupManager;
         private MoneyStorage moneyStorage;
         private ConveyorUpgradesManager upgradesManager;
 
 
+        private ConveyorUpgradesListPresenter presenter = new();
+
         [Button]
         public void ShowPopup(string id)
         {
-            popupManager.ShowPopup(PopupType.ConveyorUpgrades, null);
+            presenter.SetId(id);
+            popupManager.ShowPopup(PopupType.ConveyorUpgrades, presenter);
         }
-
 
         void IGameConstructElement.ConstructGame(IGameContext context)
         {
             this.moneyStorage = context.GetService<MoneyStorage>();
             this.popupManager = context.GetService<PopupManager>();
             this.upgradesManager = context.GetService<ConveyorUpgradesManager>();
+
+            this.presenter.Construct(this.moneyStorage, this.upgradesManager);
         }
     }
 }

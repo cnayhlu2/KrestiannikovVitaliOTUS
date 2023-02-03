@@ -15,6 +15,11 @@ namespace Homework_08_Interaction.ConveyorUpgrades
             this.config = config;
         }
 
+        public override string GetStats()
+        {
+            return $"+{config.AddSize}";
+        }
+
         protected override void InitConveyor()
         {
             this.component = this.conveyor.Get<IInputZoneComponent>();
