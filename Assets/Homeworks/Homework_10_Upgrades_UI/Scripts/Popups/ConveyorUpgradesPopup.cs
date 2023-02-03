@@ -19,5 +19,11 @@ namespace Homeworks.Homework_10_Upgrades_UI.Scripts.Popups
             this.presenter?.Init(this.upgradeView,this.viewRoot);
             this.presenter?.Show();
         }
+
+        protected override void OnHide()
+        {
+            base.OnHide();
+            this.presenter?.Hide();
+        }
     }
 }

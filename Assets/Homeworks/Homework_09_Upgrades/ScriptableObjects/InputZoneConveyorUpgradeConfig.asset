@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3afc35505949b2be677b8559b1e716, type: 3}
   m_Name: InputZoneConveyorUpgradeConfig
   m_EditorClassIdentifier: 
+  name: InputZoneIncreaser
+  sprite: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
   maxLevel: 2
   cost: 100
   addSize: 1

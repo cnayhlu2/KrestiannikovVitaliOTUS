@@ -3,6 +3,7 @@ using Homework_08_Interaction.GameContext;
 using Homework_Presentation_Model.Storage;
 using Homework_Presentation_Model.UI;
 using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Homeworks.Homework_10_Upgrades_UI.Scripts
 {
@@ -29,9 +30,11 @@ namespace Homeworks.Homework_10_Upgrades_UI.Scripts
         public void Show()
         {
             this.moneyStorage.OnMoneyChanged += OnMoneyChanged;
+            this.upgrade.OnUpgrade += OnUpgraded;
             this.view.Button.AddListener(OnButtonClicked);
-            
+
             this.view.SetName(this.upgrade.GetName);
+            this.view.SetIcon(this.upgrade.GetIcon);
 
             this.UpdateStats();
             this.UpdateLevel();
@@ -41,16 +44,25 @@ namespace Homeworks.Homework_10_Upgrades_UI.Scripts
 
         public void Hide()
         {
+            this.upgrade.OnUpgrade -= OnUpgraded;
             this.moneyStorage.OnMoneyChanged -= OnMoneyChanged;
             this.view.Button.RemoveListener(OnButtonClicked);
         }
-        
+
+        private void OnUpgraded(int obj)
+        {
+            this.UpdateStats();
+            this.UpdateLevel();
+            this.UpdatePrice();
+            this.UpdateButtonState();
+        }
+
         private void OnMoneyChanged(int value)
         {
             this.UpdatePrice();
             this.UpdateButtonState();
         }
-        
+
         private void UpdateButtonState()
         {
             if (this.upgrade.IsMaxLevel)
@@ -70,7 +82,7 @@ namespace Homeworks.Homework_10_Upgrades_UI.Scripts
 
         private void UpdatePrice()
         {
-            this.view.Button.SetPrice(this.upgrade.IsMaxLevel ? "" : this.upgrade.GetPrice.ToString());
+            this.view.Button.SetPrice(this.upgrade.IsMaxLevel ? "MAX" : this.upgrade.GetPrice.ToString());
         }
 
         private void UpdateLevel()
@@ -80,11 +92,7 @@ namespace Homeworks.Homework_10_Upgrades_UI.Scripts
 
         private void UpdateStats()
         {
-            string stats = "";
-
-            if (!this.upgrade.IsMaxLevel)
-                stats = this.upgrade.GetStats();
-
+            string stats = this.upgrade.GetStats();
             this.view.SetStats(stats);
         }
 

@@ -17,7 +17,15 @@ namespace Homework_08_Interaction.ConveyorUpgrades
 
         public override string GetStats()
         {
-            return $"+{config.AddSize}";
+            string stat = "";
+
+            if (Level > 0)
+                stat += $"({config.AddSize * Level})";
+            else
+                stat += 0;
+            if (!IsMaxLevel)
+                stat += $" (+{config.AddSize})";
+            return stat;
         }
 
         protected override void InitConveyor()
