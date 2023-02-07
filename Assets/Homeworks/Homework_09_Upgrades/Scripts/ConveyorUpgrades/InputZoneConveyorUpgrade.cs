@@ -15,6 +15,19 @@ namespace Homework_08_Interaction.ConveyorUpgrades
             this.config = config;
         }
 
+        public override string GetStats()
+        {
+            string stat = "";
+
+            if (Level > 0)
+                stat += $"({config.AddSize * Level})";
+            else
+                stat += 0;
+            if (!IsMaxLevel)
+                stat += $" (+{config.AddSize})";
+            return stat;
+        }
+
         protected override void InitConveyor()
         {
             this.component = this.conveyor.Get<IInputZoneComponent>();

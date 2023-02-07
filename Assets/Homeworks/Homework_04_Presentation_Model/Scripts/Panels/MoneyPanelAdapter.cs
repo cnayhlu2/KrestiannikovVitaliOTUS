@@ -1,27 +1,19 @@
-﻿using GameElements;
+﻿using GameSystem;
 using Homework_Presentation_Model.Storage;
 using UnityEngine;
 
 namespace Homework_Presentation_Model.Panels
 {
     public class MoneyPanelAdapter : MonoBehaviour,
-        IGameInitElement,
-        IGameStartElement,
-        IGameFinishElement
+        IGameConstructElement
     {
         private MoneyStorage moneyStorage;
         private CurrencyPanel currencyPanel;
 
-        void IGameInitElement.InitGame(IGameContext context)
-        {
-            this.moneyStorage = context.GetService<MoneyStorage>();
-            this.currencyPanel = context.GetService<CurrencyPanel>();
-            this.currencyPanel.SetValue(this.moneyStorage.Money.ToString());
-        }
 
-        void IGameStartElement.StartGame(IGameContext context)
+        private void OnDestroy()
         {
-            this.moneyStorage.OnMoneyChanged += MoneyChanged;
+            this.moneyStorage.OnMoneyChanged -= MoneyChanged;
         }
 
         private void MoneyChanged(int money)
@@ -29,9 +21,12 @@ namespace Homework_Presentation_Model.Panels
             this.currencyPanel.SetValue(money.ToString());
         }
 
-        void IGameFinishElement.FinishGame(IGameContext context)
+        void IGameConstructElement.ConstructGame(GameSystem.IGameContext context)
         {
-            this.moneyStorage.OnMoneyChanged -= MoneyChanged;
+            this.moneyStorage = context.GetService<MoneyStorage>();
+            this.currencyPanel = context.GetService<CurrencyPanel>();
+            this.currencyPanel.SetValue(this.moneyStorage.Money.ToString());
+            this.moneyStorage.OnMoneyChanged += MoneyChanged;
         }
     }
 }

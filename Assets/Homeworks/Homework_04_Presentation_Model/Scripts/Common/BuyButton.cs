@@ -8,29 +8,19 @@ namespace Homework_Presentation_Model.UI
 {
     public sealed class BuyButton : MonoBehaviour
     {
-        [SerializeField]
-        private Button button;
+        [SerializeField] private Button button;
 
-        [Space]
-        [SerializeField]
-        private Image buttonBackground;
+        [Space] [SerializeField] private Image buttonBackground;
 
-        [SerializeField]
-        private Sprite availableButtonSprite;
+        [SerializeField] private Sprite availableButtonSprite;
 
-        [SerializeField]
-        private Sprite lockedButtonSprite;
+        [SerializeField] private Sprite lockedButtonSprite;
 
-        [Space]
-        [SerializeField]
-        private TextMeshProUGUI priceText;
+        [Space] [SerializeField] private TextMeshProUGUI priceText;
 
-        [SerializeField]
-        private Image priceIcon;
+        [SerializeField] private Image priceIcon;
 
-        [Space]
-        [SerializeField]
-        private State state;
+        [Space] [SerializeField] private State state;
 
         public void AddListener(UnityAction action)
         {
@@ -62,19 +52,25 @@ namespace Homework_Presentation_Model.UI
         {
             this.state = state;
 
-            if (state == State.AVAILABLE)
+            switch (this.state)
             {
-                this.button.interactable = true;
-                this.buttonBackground.sprite = this.availableButtonSprite;
-            }
-            else if (state == State.LOCKED)
-            {
-                this.button.interactable = false;
-                this.buttonBackground.sprite = this.lockedButtonSprite;
-            }
-            else
-            {
-                throw new Exception($"Undefined button state {state}!");
+                case State.MAXED:
+                    this.button.interactable = false;
+                    this.buttonBackground.sprite = this.availableButtonSprite;
+                    this.priceIcon.gameObject.SetActive(false);
+                    break;
+                case State.LOCKED:
+                    this.button.interactable = false;
+                    this.buttonBackground.sprite = this.lockedButtonSprite;
+                    this.priceIcon.gameObject.SetActive(true);
+                    break;
+                case State.AVAILABLE:
+                    this.button.interactable = true;
+                    this.buttonBackground.sprite = this.availableButtonSprite;
+                    this.priceIcon.gameObject.SetActive(true);
+                    break;
+                default:
+                    throw new Exception($"Undefined button state {state}!");
             }
         }
 
@@ -82,20 +78,7 @@ namespace Homework_Presentation_Model.UI
         {
             AVAILABLE,
             LOCKED,
+            MAXED
         }
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            try
-            {
-                this.SetState(this.state);
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-        }
-#endif
     }
 }

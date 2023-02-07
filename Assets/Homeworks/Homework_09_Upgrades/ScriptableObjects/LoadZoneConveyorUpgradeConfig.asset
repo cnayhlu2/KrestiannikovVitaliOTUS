@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9655f90923df4a59bcf929cca0922a41, type: 3}
   m_Name: LoadZoneConveyorUpgradeConfig
   m_EditorClassIdentifier: 
+  name: LoadZoneIncreaser
+  sprite: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
   maxLevel: 2
   cost: 100
   addSize: 2

@@ -3,6 +3,7 @@ using Entities;
 using Homework_08_Interaction.Components;
 using Homework_08_Interaction.Configs;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Homework_08_Interaction.ConveyorUpgrades
 {
@@ -15,10 +16,10 @@ namespace Homework_08_Interaction.ConveyorUpgrades
         [ShowInInspector, ReadOnly] public int Level => this.currentLevel;
 
         public bool IsMaxLevel => this.currentLevel >= this.config.MaxLevel;
-
         public int GetPrice => this.config.Price;
         public string GetId => this.conveyor.Get<IIDComponent>().GetId();
-
+        public string GetName => this.config.GetName;
+        public Sprite GetIcon => this.config.GetIcon;
 
         private ConveyorUpgradeConfig config;
         private int currentLevel;
@@ -63,5 +64,7 @@ namespace Homework_08_Interaction.ConveyorUpgrades
             for (int i = 0; i < Level; i++)
                 DoUpgrade();
         }
+
+        public abstract string GetStats();
     }
 }

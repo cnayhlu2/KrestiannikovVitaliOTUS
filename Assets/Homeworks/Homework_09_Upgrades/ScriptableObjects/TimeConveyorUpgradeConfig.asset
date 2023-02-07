@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5ddc977281404687bf54dcc35f7e18, type: 3}
   m_Name: TimeConveyorUpgradeConfig
   m_EditorClassIdentifier: 
-  id: 0
+  name: TimeReduce
+  sprite: {fileID: 21300000, guid: 8325d4ef0a6eb3d43952aff8a06d9f45, type: 3}
   maxLevel: 2
   cost: 100
   reduceTime: 0.3
