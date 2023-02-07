@@ -35,10 +35,10 @@ MonoBehaviour:
     - Elementary
     - Assembly-CSharp
     - Zenject-IntegrationTests
+    - GameSystem
     - GameElements
     - Entities
     - Sirenix.OdinInspector.CompatibilityLayer
-    - GameSystem
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - Zenject-TestFramework
     - SimpleFolderIcon
