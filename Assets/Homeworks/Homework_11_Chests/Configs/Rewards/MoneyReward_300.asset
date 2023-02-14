@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbb34c194c914957af36451661c3f13d, type: 3}
-  m_Name: RandomMoneyReward_100_150
+  m_Name: MoneyReward_300
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -30,7 +30,7 @@ MonoBehaviour:
       Data: 0
     - Name: id
       Entry: 1
-      Data: money_100_150
+      Data: money_300
     - Name: components
       Entry: 7
       Data: 1|System.Collections.Generic.List`1[[System.Object, mscorlib]], mscorlib
@@ -39,13 +39,10 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 2|Homework_11_Chests.Components.Component_RandomMoneyReward, Assembly-CSharp
-    - Name: minMoney
+      Data: 2|Homework_11_Chests.Components.Component_MoneyReward, Assembly-CSharp
+    - Name: money
       Entry: 3
-      Data: 100
-    - Name: maxMoney
-      Entry: 3
-      Data: 150
+      Data: 300
     - Name: 
       Entry: 8
       Data: 

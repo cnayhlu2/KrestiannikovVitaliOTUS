@@ -31,7 +31,7 @@ MonoBehaviour:
     - Name: id
       Entry: 1
       Data: money_100
-    - Name: comonents
+    - Name: components
       Entry: 7
       Data: 1|System.Collections.Generic.List`1[[System.Object, mscorlib]], mscorlib
     - Name: 

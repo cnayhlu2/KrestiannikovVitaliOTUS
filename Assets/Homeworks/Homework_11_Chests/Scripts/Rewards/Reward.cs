@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Homework_11_Chests
 {
+    [Serializable]
     public sealed class Reward
     {
         [SerializeField, PreviewField] private Sprite icon;
         [SerializeField] private string id;
-        [Space, SerializeReference] private List<object> comonents;
+        [Space, SerializeReference] private List<object> components;
 
         public Sprite Icon => icon;
         public string Id => id;
@@ -16,22 +18,22 @@ namespace Homework_11_Chests
         public Reward()
         {
             this.id = string.Empty;
-            this.comonents = new List<object>();
+            this.components = new List<object>();
         }
 
         public Reward(string id, List<object> components)
         {
             this.id = id;
-            this.comonents = new List<object>(components);
+            this.components = new List<object>(components);
         }
 
 
         public List<T> GetComponents<T>()
         {
             List<T> result = new List<T>();
-            for (int i = 0; i < this.comonents.Count; i++)
+            for (int i = 0; i < this.components.Count; i++)
             {
-                if (this.comonents[i] is T component)
+                if (this.components[i] is T component)
                 {
                     result.Add(component);
                 }
@@ -40,13 +42,13 @@ namespace Homework_11_Chests
             return result;
         }
 
-        public List<object> GetAllComponents() => this.comonents;
+        public List<object> GetAllComponents() => this.components;
 
         public bool TryGetComponent<T>(out T result)
         {
-            for (int i = 0; i < this.comonents.Count; i++)
+            for (int i = 0; i < this.components.Count; i++)
             {
-                if (this.comonents[i] is T component)
+                if (this.components[i] is T component)
                 {
                     result = component;
                     return true;

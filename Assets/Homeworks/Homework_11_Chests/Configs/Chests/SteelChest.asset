@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
   type: 2
-  rewardses: []
+  rewardses:
+  - {fileID: 11400000, guid: bbc01fc5bfaf1de4baf7be0124cf1993, type: 2}
+  duration: 20
