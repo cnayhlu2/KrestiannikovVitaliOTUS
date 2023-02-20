@@ -38,7 +38,6 @@ namespace Homework_11_Chests
             {
                 chest.Reset();
                 this.rewardManager.TakeReward(chest.GetRandomReward());
-                chest.Start();
             }
         }
     }

@@ -14,7 +14,7 @@ namespace Homework_11_Chests
         public List<RewardConfig> Rewards => this.chestConfig.Rewards;
         public float Duration => this.chestConfig.Duration;
         [ShowInInspector] public bool IsActive => this.countdown.IsPlaying;
-        [ShowInInspector] public bool IsCompleted => this.isCompleted;
+        [ShowInInspector] public bool IsCompleted => !this.countdown.IsPlaying;
 
         [ShowInInspector] public float RemainingSeconds
         {
@@ -24,7 +24,6 @@ namespace Homework_11_Chests
 
         private readonly ChestConfig chestConfig;
         private readonly Countdown countdown;
-        private bool isCompleted = false;
 
         public Chest(ChestConfig chestConfig, MonoBehaviour behaviour)
         {
@@ -39,7 +38,6 @@ namespace Homework_11_Chests
                 throw new Exception("Is started!");
             }
 
-            this.isCompleted = false;
             this.countdown.OnEnded += this.OnEndTime;
 
             this.countdown.Reset();
@@ -48,7 +46,8 @@ namespace Homework_11_Chests
 
         public void Reset()
         {
-            this.isCompleted = false;
+            this.countdown.Reset();
+            this.countdown.Play();
         }
 
         public Reward GetRandomReward()
@@ -59,7 +58,6 @@ namespace Homework_11_Chests
         
         private void OnEndTime()
         {
-            this.isCompleted = true;
             this.countdown.OnEnded -= this.OnEndTime;
         }
     }
