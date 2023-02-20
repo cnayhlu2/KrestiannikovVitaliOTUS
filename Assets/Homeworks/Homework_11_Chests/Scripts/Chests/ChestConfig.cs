@@ -9,7 +9,7 @@ namespace Homework_11_Chests
     public class ChestConfig : ScriptableObject
     {
         [SerializeField, PreviewField] private Sprite icon;
-        [SerializeField] private ChestType type;
+        [SerializeField] public ChestType type;
         [SerializeField] private List<RewardConfig> rewardses = new();
         [SerializeField] private float duration;
 
@@ -18,7 +18,7 @@ namespace Homework_11_Chests
         public List<RewardConfig> Rewards => this.rewardses;
         public float Duration => duration;
 
-        public Chest instatiateChest(MonoBehaviour behaviour)
+        public Chest InstatiateChest(MonoBehaviour behaviour)
         {
             Chest chest = new(this, behaviour);
             return chest;

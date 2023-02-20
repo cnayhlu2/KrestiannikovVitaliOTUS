@@ -132,30 +132,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 287391581}
-  - component: {fileID: 287391580}
+  - component: {fileID: 287391582}
   m_Layer: 0
-  m_Name: ChestManager
+  m_Name: ChestSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &287391580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287391579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4db7b5388b24c3f856a25adbcc32de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestConfigs:
-  - {fileID: 11400000, guid: 091dbfc47da72cc4f8fba89708e53182, type: 2}
-  - {fileID: 11400000, guid: 16977907ef1f1644e9f69b8840ba5667, type: 2}
-  - {fileID: 11400000, guid: 68c41ce640ba522419d98938d631a14e, type: 2}
 --- !u!4 &287391581
 Transform:
   m_ObjectHideFlags: 0
@@ -171,6 +155,22 @@ Transform:
   m_Father: {fileID: 643470421}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &287391582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287391579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ddce154f934fe6aba30301bab666ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestConfigs:
+  - {fileID: 11400000, guid: 091dbfc47da72cc4f8fba89708e53182, type: 2}
+  - {fileID: 11400000, guid: 16977907ef1f1644e9f69b8840ba5667, type: 2}
+  - {fileID: 11400000, guid: 68c41ce640ba522419d98938d631a14e, type: 2}
 --- !u!1 &475376456
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   gameElements:
   - {fileID: 1916074177}
   - {fileID: 1921797080}
-  - {fileID: 287391580}
+  - {fileID: 287391582}
   constructTasks: []
 --- !u!1 &705507993
 GameObject:

@@ -1,42 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameSystem;
 using Sirenix.OdinInspector;
-using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Homework_11_Chests
 {
-    public class ChestManager : MonoBehaviour, IGameConstructElement
+    public class ChestManager
     {
-        [SerializeField, HideInPlayMode] private List<ChestConfig> chestConfigs = new();
-
-        [ShowInInspector, HideInEditorMode] private List<Chest> chests = new();
+        [ShowInInspector] private List<Chest> chests = new();
 
         private RewardManager rewardManager;
 
-        public void ConstructGame(IGameContext context)
+        public void Construct(RewardManager rewardManager, List<Chest> chests)
         {
-            this.rewardManager = context.GetService<RewardManager>();
-            InitChests();
+            this.rewardManager = rewardManager;
+            this.chests = chests;
+            Start();
         }
 
-
-        [Button]
-        public void StartChestByType(ChestType type)
+        private void Start()
         {
-            Chest chest = chests.Find(item => item.Type == type);
-            if (chest == null)
+            for (int i = 0; i < this.chests.Count; i++)
             {
-                throw new Exception($"Do not find chest {type}");
+                this.chests[i].Start();
             }
-
-            if (chest.IsActive || chest.IsCompleted)
-            {
-                throw new Exception($"Can't starting chest: {type}");
-            }
-
-            chest.Start();
         }
 
         [Button]
@@ -51,18 +37,8 @@ namespace Homework_11_Chests
             if (chest.IsCompleted)
             {
                 chest.Reset();
-                var rndIndex = Random.Range(0, chest.Rewards.Count);
-                Debug.Log($"rndIndex {rndIndex}");
-                var rewardConfig = chest.Rewards[rndIndex];
-                this.rewardManager.TakeReward(rewardConfig.Reward);
-            }
-        }
-
-        private void InitChests()
-        {
-            foreach (var chestConfig in chestConfigs)
-            {
-                this.chests.Add(chestConfig.instatiateChest(this));
+                this.rewardManager.TakeReward(chest.GetRandomReward());
+                chest.Start();
             }
         }
     }

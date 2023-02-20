@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Elementary;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Homework_11_Chests
 {
@@ -50,6 +51,12 @@ namespace Homework_11_Chests
             this.isCompleted = false;
         }
 
+        public Reward GetRandomReward()
+        {
+            var rndIndex = Random.Range(0, Rewards.Count);
+            return Rewards[rndIndex].Reward;
+        }
+        
         private void OnEndTime()
         {
             this.isCompleted = true;
