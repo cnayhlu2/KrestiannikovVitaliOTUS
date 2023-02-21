@@ -8,6 +8,8 @@ namespace Homework_11_Chests
     {
         [ShowInInspector] private List<Chest> chests = new();
 
+        public List<Chest> GetChests => this.chests;
+
         private RewardManager rewardManager;
 
         public void Construct(RewardManager rewardManager, List<Chest> chests)

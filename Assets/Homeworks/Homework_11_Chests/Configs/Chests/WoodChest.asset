@@ -17,4 +17,4 @@ MonoBehaviour:
   rewardses:
   - {fileID: 11400000, guid: e0c2f495cab652e4e959d18a5e7f8c81, type: 2}
   - {fileID: 11400000, guid: e0e7f7f30415d504196e8fd93fcf82c9, type: 2}
-  duration: 5
+  duration: 500
