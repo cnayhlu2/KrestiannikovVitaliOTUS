@@ -24,6 +24,7 @@ namespace Homework_11_Chests
 
         public void ReadyGame()
         {
+            this.chestManager.StartChests();
             this.shifter.AddSynchronizer(this.synchronizer);
         }
 

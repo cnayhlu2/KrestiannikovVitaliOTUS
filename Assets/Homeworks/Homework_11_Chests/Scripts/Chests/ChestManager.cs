@@ -16,10 +16,11 @@ namespace Homework_11_Chests
         {
             this.rewardManager = rewardManager;
             this.chests = chests;
-            Start();
         }
+        
+        
 
-        private void Start()
+        public void StartChests()
         {
             for (int i = 0; i < this.chests.Count; i++)
             {
