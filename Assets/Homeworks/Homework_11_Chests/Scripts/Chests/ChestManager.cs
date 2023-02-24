@@ -12,13 +12,10 @@ namespace Homework_11_Chests
 
         private RewardManager rewardManager;
 
-        public void Construct(RewardManager rewardManager, List<Chest> chests)
+        public void Construct(RewardManager rewardManager)
         {
             this.rewardManager = rewardManager;
-            this.chests = chests;
         }
-        
-        
 
         public void StartChests()
         {
@@ -42,6 +39,11 @@ namespace Homework_11_Chests
                 chest.Reset();
                 this.rewardManager.TakeReward(chest.GetRandomReward());
             }
+        }
+
+        public void SetChests(List<Chest> chests)
+        {
+            this.chests = chests;
         }
     }
 }

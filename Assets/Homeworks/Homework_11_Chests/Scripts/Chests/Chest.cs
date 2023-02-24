@@ -39,8 +39,6 @@ namespace Homework_11_Chests
             }
 
             this.countdown.OnEnded += this.OnEndTime;
-
-            this.countdown.Reset();
             this.countdown.Play();
         }
 

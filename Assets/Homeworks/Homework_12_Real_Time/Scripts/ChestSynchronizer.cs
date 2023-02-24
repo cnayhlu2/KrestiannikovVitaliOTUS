@@ -13,7 +13,7 @@ namespace Homeworks.Homework_12_Real_Time.Scripts
         
         public void TimePassed(float time)
         {
-            foreach (Chest chest in this.chestManager.GetChests)
+            foreach (Homework_11_Chests.Chest chest in this.chestManager.GetChests)
             {
                 chest.RemainingSeconds -= time;
             }

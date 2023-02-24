@@ -59,6 +59,8 @@ namespace GameSystem
         [SerializeField]
         private bool autoRun = true;
 
+        [SerializeField] private bool autoFinish = true;
+        
         [SerializeField]
         private bool useInject;
 
@@ -216,6 +218,8 @@ namespace GameSystem
                 this.enabled = false;
             }
         }
+        
+        
 
         private void FixedUpdate()
         {
@@ -234,6 +238,10 @@ namespace GameSystem
 
         private void OnDestroy()
         {
+            if (this.autoFinish)
+            {
+                this.FinishGame();
+            }
             this.gameContext.OnRegistered -= this.updateContext.AddListener;
             this.gameContext.OnUnregistered -= this.updateContext.RemoveListener;
         }
