@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Homework_11_Chests
 {
     public class ChestSystemInstaller : MonoBehaviour, IGameConstructElement, 
-        IGameReadyElement, IGameFinishElement, IGameInitElement
+        IGameReadyElement, IGameFinishElement, IGameInitElement, IGameStartElement
     {
         [SerializeField] private TimeShifter shifter;
         [SerializeField] private ChestCatalog catalog;
@@ -27,11 +27,22 @@ namespace Homework_11_Chests
             this.chestMediator.Construct(this.repository, this.chestManager,this.catalog,this);
         }
 
+        void IGameInitElement.InitGame()
+        {
+            Debug.Log("InitGame");
+            this.chestMediator.LoadChests();
+            this.shifter.AddSynchronizer(this.synchronizer);
+        }
+        
         void IGameReadyElement.ReadyGame()
         {
             Debug.Log("ReadyGame");
+        }
+        
+        void IGameStartElement.StartGame()
+        {
+            Debug.Log("StartGame");
             this.chestManager.StartChests();
-            this.shifter.AddSynchronizer(this.synchronizer);
         }
 
         void IGameFinishElement.FinishGame()
@@ -41,11 +52,7 @@ namespace Homework_11_Chests
             this.chestMediator.SaveChests();
         }
 
-        void IGameInitElement.InitGame()
-        {
-            Debug.Log("InitGame");
-            this.chestMediator.LoadChests();
-        }
 
+        
     }
 }
