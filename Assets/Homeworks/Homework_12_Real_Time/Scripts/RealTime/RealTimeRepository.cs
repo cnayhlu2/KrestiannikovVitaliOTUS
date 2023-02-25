@@ -13,18 +13,16 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.RealTime
             PlayerPrefs.SetString(PrefKey, json);
         }
 
-        public void LoadData(out RealTimeData data)
+        public bool LoadData(out RealTimeData data)
         {
             if (PlayerPrefs.HasKey(PrefKey))
             {
                 string json = PlayerPrefs.GetString(PrefKey);
                 data = JsonUtility.FromJson<RealTimeData>(json);
+                return true;
             }
-            else
-            {
-                data = new RealTimeData();
-                data.Seconds = DateTime.Now.Second;
-            }
+            data = default;
+            return false;
         }
     }
 }

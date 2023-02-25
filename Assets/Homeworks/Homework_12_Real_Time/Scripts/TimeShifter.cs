@@ -12,6 +12,7 @@ namespace Homeworks.Homework_12_Real_Time.Scripts
         [Button]
         public void PassedTime(float time)
         {
+            Debug.Log($"{nameof(PassedTime)} time: {time}");
             foreach (var synchronizer in this.synchronizers)
             {
                 synchronizer.TimePassed(time);

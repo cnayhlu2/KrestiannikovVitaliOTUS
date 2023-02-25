@@ -10,8 +10,9 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.Chest
         private ChestsRepository repository;
         private ChestManager manager;
         private ChestCatalog catalog;
-        
-        public void Construct(ChestsRepository repository, ChestManager manager,ChestCatalog catalog, MonoBehaviour behaviour)
+
+        public void Construct(ChestsRepository repository, ChestManager manager, ChestCatalog catalog,
+            MonoBehaviour behaviour)
         {
             this.repository = repository;
             this.manager = manager;
@@ -31,10 +32,10 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.Chest
                     Type = chest.Type,
                     RemainingSeconds = chest.RemainingSeconds
                 };
-                
+
                 data.chests.Add(chestData);
             }
-            
+
             this.repository.Save(data);
         }
 
@@ -44,7 +45,7 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.Chest
 
             List<Homework_11_Chests.Chest> chests = new List<Homework_11_Chests.Chest>();
 
-            for (int i=0;i<data.chests.Count;i++)
+            for (int i = 0; i < data.chests.Count; i++)
             {
                 var chestData = data.chests[i];
                 ChestConfig config = this.catalog.GetChestConfigByType(chestData.Type);
@@ -52,9 +53,8 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.Chest
                 chest.RemainingSeconds = chestData.RemainingSeconds;
                 chests.Add(chest);
             }
-            
+
             this.manager.SetChests(chests);
         }
-        
     }
 }

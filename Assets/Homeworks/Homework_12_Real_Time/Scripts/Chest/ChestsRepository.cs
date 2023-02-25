@@ -29,7 +29,7 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.Chest
                 Debug.Log($"Load default data {JsonUtility.ToJson(data)}");
             }
         }
-        
+
         private ChestsData GetDefault()
         {
             ChestsData data = new()
@@ -37,8 +37,8 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.Chest
                 chests = new List<ChestData>()
                 {
                     new() {Type = ChestType.WOOD, RemainingSeconds = 0f},
-                    new() { Type = ChestType.STEEl, RemainingSeconds = 0f},
-                    new() { Type = ChestType.GOLD, RemainingSeconds = 0f},
+                    new() {Type = ChestType.STEEl, RemainingSeconds = 0f},
+                    new() {Type = ChestType.GOLD, RemainingSeconds = 0f},
                 }
             };
             return data;
