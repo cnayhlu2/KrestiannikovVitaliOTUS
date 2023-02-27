@@ -1,14 +1,15 @@
 using System;
-using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Homeworks.Homework_13_14_inventory
 {
+    [Serializable]
     public sealed class InventoryItem
     {
-        [SerializeField] private readonly string name;
-        [SerializeField] private readonly InventoryItemFlags flags;
-        [SerializeField] private readonly InventoryItemMetadata metadata;
+        [SerializeField] private string name;
+        [SerializeField] private InventoryItemFlags flags;
+        [SerializeField] private InventoryItemMetadata metadata;
 
         public string Name => this.name;
         public InventoryItemFlags Flags => this.flags;
@@ -16,7 +17,8 @@ namespace Homeworks.Homework_13_14_inventory
 
         [SerializeReference] private readonly object[] components;
 
-        public InventoryItem(string name, InventoryItemFlags flags, InventoryItemMetadata metadata,params object[] components)
+        public InventoryItem(string name, InventoryItemFlags flags, InventoryItemMetadata metadata,
+            params object[] components)
         {
             this.name = name;
             this.flags = flags;
@@ -35,6 +37,32 @@ namespace Homeworks.Homework_13_14_inventory
             }
 
             throw new Exception($"{typeof(T)} is not found");
+        }
+
+        public InventoryItem Clone()
+        {
+            return new InventoryItem(this.name,
+                this.flags,
+                this.metadata,
+                this.CloneComponents());
+        }
+
+        private object[] CloneComponents()
+        {
+            var count = this.components.Length;
+            var result = new object[count];
+            for (int i = 0; i < result.Length; i++)
+            {
+                var component = this.components[i];
+                if (component is ICloneable cloneable)
+                {
+                    component = cloneable.Clone();
+                }
+
+                result[i] = this.components[i];
+            }
+
+            return result;
         }
     }
 }
