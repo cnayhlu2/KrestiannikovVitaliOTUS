@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Homeworks.Homework_13_14_inventory
@@ -10,12 +9,11 @@ namespace Homeworks.Homework_13_14_inventory
         [SerializeField] private string name;
         [SerializeField] private InventoryItemFlags flags;
         [SerializeField] private InventoryItemMetadata metadata;
+        [SerializeReference] private object[] components;
 
         public string Name => this.name;
         public InventoryItemFlags Flags => this.flags;
         public InventoryItemMetadata Metadata => this.metadata;
-
-        [SerializeReference] private readonly object[] components;
 
         public InventoryItem(string name, InventoryItemFlags flags, InventoryItemMetadata metadata,
             params object[] components)

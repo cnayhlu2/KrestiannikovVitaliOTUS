@@ -6,6 +6,6 @@ namespace Homeworks.Homework_13_14_inventory
         fileName = "Homework/inventory/Create" + nameof(InventoryItemConfig))]
     public class InventoryItemConfig : ScriptableObject
     {
-        [SerializeField] private InventoryItem prototype;
+        public InventoryItem Prototype;
     }
 }
