@@ -14,14 +14,13 @@ namespace Homeworks.Homework_12_Real_Time.Scripts.RealTime
 
         [ShowInInspector] private long realTimeSeconds;
         private long sleepSeconds;
-        private float realTimeSinceStartupCache;
         private float secondAcc;
 
         private void Update()
         {
             if (this.isActive)
             {
-                this.secondAcc += Time.deltaTime;
+                secondAcc += Time.deltaTime;
                 if (secondAcc < 1)
                     return;
                 int seconds = (int) this.secondAcc;
