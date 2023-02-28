@@ -31,9 +31,8 @@ MonoBehaviour:
     assemblyNames:
     - Zenject
     - ServiceLocator
-    - Assembly-CSharp-firstpass
+    - Assets
     - Elementary
-    - Assembly-CSharp
     - Zenject-IntegrationTests
     - GameSystem
     - GameElements
@@ -43,6 +42,7 @@ MonoBehaviour:
     - Zenject-TestFramework
     - SimpleFolderIcon
     - Sirenix.OdinInspector.Modules.UnityMathematics
+    - Eqipment
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

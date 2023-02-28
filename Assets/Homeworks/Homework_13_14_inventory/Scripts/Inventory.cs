@@ -40,12 +40,25 @@ namespace Homeworks.Homework_13_14_inventory
                     return this.RemoveItem(items[i]);
                 }
             }
+
             return false;
         }
 
         public bool IsItemExists(InventoryItem item)
         {
             return this.items.Contains(item);
+        }
+
+        public bool IsItemExists(string name)
+        {
+            for (int i = 0; i < this.items.Count; i++)
+            {
+                if (this.items[i].Name == name)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<InventoryItem> GetAllItems()
@@ -76,9 +89,39 @@ namespace Homeworks.Homework_13_14_inventory
 
             for (int i = 0; i < this.items.Count; i++)
             {
-                if (items[i].FlagsExists(flags))
+                if (this.items[i].FlagsExists(flags))
                 {
                     result.Add(this.items[i]);
+                }
+            }
+
+            return result;
+        }
+
+        public int CountItems(InventoryItemFlags flags)
+        {
+            int result = 0;
+
+            for (int i = 0; i < this.items.Count; i++)
+            {
+                if (this.items[i].FlagsExists(flags))
+                {
+                    result++;
+                }
+            }
+
+            return result;
+        }
+
+        public int CountItems(string name)
+        {
+            int result = 0;
+
+            for (int i = 0; i < this.items.Count; i++)
+            {
+                if (this.items[i].Name == name)
+                {
+                    result++;
                 }
             }
 
