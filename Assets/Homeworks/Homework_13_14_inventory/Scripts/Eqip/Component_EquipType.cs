@@ -13,5 +13,10 @@ namespace Homeworks.Homework_13_14_inventory.Eqip
 
         [SerializeField]
         private EquipType type;
+
+        public void SetType(EquipType type)
+        {
+            this.type = type;
+        }
     }
 }

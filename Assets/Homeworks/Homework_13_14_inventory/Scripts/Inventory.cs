@@ -78,10 +78,24 @@ namespace Homeworks.Homework_13_14_inventory
                     return true;
                 }
             }
-
             item = default;
             return false;
         }
+        
+        public bool TryFindItem(string name, out InventoryItem item)
+        {
+            for (int i = 0; i < this.items.Count; i++)
+            {
+                if (items[i].Name == name)
+                {
+                    item = this.items[i];
+                    return true;
+                }
+            }
+            item = default;
+            return false;
+        }
+        
 
         public List<InventoryItem> FindItems(InventoryItemFlags flags)
         {
