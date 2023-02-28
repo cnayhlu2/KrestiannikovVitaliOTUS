@@ -36,8 +36,8 @@ public class EqipmentTests
         inventory.AddItem(head);
 
         //ACT - одеваем на голову шлем
-        HeadEqipper headEqipper = new HeadEqipper();
-        headEqipper.EqipItem(inventory, head.Name);
+        EqipmentManager eqipmentManager = new EqipmentManager();
+        eqipmentManager.EqipItem(inventory, head.Name);
 
         //ASSERT проверяем действие
         Assert.False(inventory.TryFindItem(InventoryItemFlags.Eqippable, out InventoryItem _));
@@ -53,16 +53,16 @@ public class EqipmentTests
         Component_EquipType component = new Component_EquipType();
         component.SetType(EquipType.HEAD);
         InventoryItem head1 = new InventoryItem("Head1", InventoryItemFlags.Eqippable, null);
-        InventoryItem head2 = new InventoryItem("Head1", InventoryItemFlags.Eqippable, null);
+        InventoryItem head2 = new InventoryItem("Head2", InventoryItemFlags.Eqippable, null);
 
         Inventory inventory = new();
         inventory.AddItem(head1);
         inventory.AddItem(head2);
 
         //ACT - одеваем на голову шлем
-        HeadEqipper headEqipper = new HeadEqipper();
-        headEqipper.EqipItem(inventory, head1.Name);
-        headEqipper.EqipItem(inventory, head2.Name);
+        EqipmentManager eqipmentManager = new EqipmentManager();
+        eqipmentManager.EqipItem(inventory, head1.Name);
+        eqipmentManager.EqipItem(inventory, head2.Name);
 
         //ASSERT проверяем действие
         Assert.False(inventory.IsItemExists(head2.Name));
