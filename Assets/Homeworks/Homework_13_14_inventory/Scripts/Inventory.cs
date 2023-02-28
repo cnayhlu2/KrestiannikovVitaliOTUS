@@ -20,7 +20,7 @@ namespace Homeworks.Homework_13_14_inventory
 
         public void AddItem(InventoryItem item)
         {
-            this.items.Add(item);
+            this.items.Add(item.Clone());
             this.OnTimeAdded?.Invoke(item);
         }
 
@@ -112,6 +112,11 @@ namespace Homeworks.Homework_13_14_inventory
             return result;
         }
 
+        public int CountItems()
+        {
+            return this.items.Count;
+        }
+        
         public int CountItems(InventoryItemFlags flags)
         {
             int result = 0;
