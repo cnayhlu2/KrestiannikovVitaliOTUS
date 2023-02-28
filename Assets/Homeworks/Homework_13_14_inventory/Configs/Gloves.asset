@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Gloves
   m_EditorClassIdentifier: 
   Prototype:
-    name: Head
+    name: Gloves
     flags: 4
     metadata:
       title: Head
       description: 
       icon: {fileID: 0}
     components:
-    - rid: 8827292245410709904
+    - rid: 4299721031385612514
   references:
     version: 2
     RefIds:
-    - rid: 8827292245410709904
-      type: {class: Component_EquipType, ns: Homeworks.Homework_13_14_inventory.Eqip, asm: Assembly-CSharp}
+    - rid: 4299721031385612514
+      type: {class: Component_EquipType, ns: Homeworks.Homework_13_14_inventory.Eqip, asm: Assets}
       data:
         type: 2

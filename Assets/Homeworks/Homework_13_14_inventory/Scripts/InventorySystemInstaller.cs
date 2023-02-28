@@ -7,7 +7,10 @@ namespace Homeworks.Homework_13_14_inventory
     public class InventorySystemInstaller : MonoBehaviour, IGameConstructElement
     {
         private Inventory inventory = new();
+        private Inventory eqipInventory = new();
 
+        private EqipmentManager manager = new();
+        
         [ShowInInspector] private InventoryService inventoryService = new();
 
 
@@ -23,9 +26,17 @@ namespace Homeworks.Homework_13_14_inventory
             this.inventory.RemoveItemLast(config.Prototype.Name);
         }
 
-        public void ConstructGame(IGameContext context)
+        [Button, BoxGroup("Debug")]
+        private void EqipItem(string name)
         {
-            this.inventoryService.Construct(inventory);
+            this.manager.EqipItem(name);
+        }
+        
+
+        void IGameConstructElement.ConstructGame(IGameContext context)
+        {
+            this.manager.Construct(this.eqipInventory, this.inventory);
+            this.inventoryService.Construct(this.inventory, this.eqipInventory, this.manager);
         }
     }
 }
