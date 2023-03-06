@@ -38,8 +38,6 @@ namespace Game.GameEngine.Mechanics
         [GUIColor(0, 1, 0)]
         public void SetPosiiton(Vector3 position)
         {
-            Debug.Log($"set position {position}");
-
             position.y = 0;
             for (int i = 0, count = this.movingTransforms.Length; i < count; i++)
             {

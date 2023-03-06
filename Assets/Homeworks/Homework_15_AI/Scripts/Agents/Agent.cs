@@ -18,7 +18,6 @@ namespace Homework_15_AI.Agents
                 throw new Exception("Agent is playing");
                 return;
             }
-
             this.isPlaying = true;
             this.OnPlay();
         }
@@ -31,7 +30,6 @@ namespace Homework_15_AI.Agents
                 throw new Exception("Agent is not playing");
                 return;
             }
-
             this.isPlaying = false;
             this.OnStop();
         }

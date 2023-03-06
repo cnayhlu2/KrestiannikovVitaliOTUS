@@ -46,7 +46,6 @@ namespace Homework_15_AI.Agents
         {
             this.moveList = points;
             this.moveListIndex = 0;
-            UpdateTargetPosition();
         }
 
         [Button]
@@ -63,12 +62,15 @@ namespace Homework_15_AI.Agents
 
         protected override void OnPlay()
         {
+            this.moveListIndex = 0;
+            this.time = 0;
+            this.UpdateTargetPosition();
             this.moveAgent.Play();
         }
 
         protected override void OnStop()
         {
-            if (!this.moveAgent.IsPlaying)
+            if (this.moveAgent.IsPlaying)
                 this.moveAgent.Stop();
         }
 

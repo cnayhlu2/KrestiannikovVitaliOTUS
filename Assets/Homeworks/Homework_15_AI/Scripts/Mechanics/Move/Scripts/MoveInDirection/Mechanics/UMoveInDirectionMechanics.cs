@@ -31,7 +31,6 @@ namespace Game.GameEngine.Mechanics
             }
             else
             {
-                Debug.Log($"MoveTransform {direction}");
                 this.transformEngine.MovePosition(velocity);
             }
 

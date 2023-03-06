@@ -16,7 +16,7 @@ namespace Homework_15_AI.Agents
         private IComponent_GetPosition positionComponent;
         private IComponent_MoveInDirection moveComponent;
 
-        private Coroutine patrolCoroutine;
+        private Coroutine moveCoroutine;
 
         [Button]
         public void SetTargetPosition(Vector3 position)
@@ -40,21 +40,21 @@ namespace Homework_15_AI.Agents
 
         protected override void OnPlay()
         {
-            this.patrolCoroutine = this.StartCoroutine(this.DoRoutine());
+            this.moveCoroutine = this.StartCoroutine(this.DoRoutine());
         }
 
         protected override void OnStop()
         {
-            if (this.moveComponent != null)
+            if (this.moveCoroutine != null)
             {
-                this.StopCoroutine(this.patrolCoroutine);
-                this.patrolCoroutine = null;
+                this.StopCoroutine(this.moveCoroutine);
+                this.moveCoroutine = null;
             }
         }
 
         private IEnumerator DoRoutine()
         {
-            while (true)
+            while (this.IsPlaying)
             {
                 if (this.unit != null)
                 {
