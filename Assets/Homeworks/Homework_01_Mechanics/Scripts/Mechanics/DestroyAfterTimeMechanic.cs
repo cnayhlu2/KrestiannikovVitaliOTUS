@@ -7,8 +7,8 @@ namespace Homework_Mechanics.Mechanics
 {
     public class DestroyAfterTimeMechanic : MonoBehaviour
     {
-        [SerializeField, Required] private TimerBehaviour timer;
-        [SerializeField, Required] private BoolBehaviour state;
+        [SerializeField, Required] private MonoTimer timer;
+        [SerializeField, Required] private MonoBoolVariable state;
 
         private void OnEnable()
         {
@@ -27,7 +27,7 @@ namespace Homework_Mechanics.Mechanics
 
         private void Destroy()
         {
-            state.AssignTrue();
+            state.SetTrue();
         }
     }
 }

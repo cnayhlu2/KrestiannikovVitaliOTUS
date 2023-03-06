@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Entities
 {
     [AddComponentMenu("Entities/Entity Group")]
-    public sealed class UnityEntityGroup : UnityEntityBase
+    public sealed class UnityEntityGroup : UnityEntityBehaviour
     {
         [SerializeField]
         private UnityEntity[] entities = new UnityEntity[0];

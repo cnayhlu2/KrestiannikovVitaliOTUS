@@ -19,7 +19,7 @@ namespace Homework_06_Conveyor.Core
             }
         }
 
-        public LimitedInt GetStorage(ResourceType resourceType)
+        public IntVariableLimited GetStorage(ResourceType resourceType)
         {
             if (!resources.ContainsKey(resourceType))
                 throw new Exception($"Do not have storage by type {resourceType}");
@@ -70,7 +70,7 @@ namespace Homework_06_Conveyor.Core
     }
 
     [System.Serializable]
-    public class SerializedDictionary : UnitySerializedDictionary<ResourceType, LimitedInt>
+    public class SerializedDictionary : UnitySerializedDictionary<ResourceType, IntVariableLimited>
     {
     }
 }

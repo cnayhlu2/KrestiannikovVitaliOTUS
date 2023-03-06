@@ -6,7 +6,7 @@ namespace Homework_06_Conveyor
     public class ConveyorProgressAdapter : MonoBehaviour
     {
         [SerializeField] private ConveyorProgressView view;
-        [SerializeField] private TimerBehaviour conveyorWorker;
+        [SerializeField] private MonoTimer conveyorWorker;
 
         private void OnEnable()
         {

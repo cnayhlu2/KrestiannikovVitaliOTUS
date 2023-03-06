@@ -7,6 +7,11 @@ namespace Entities
     {
         [SerializeField]
         private UnityEntity entity;
+
+        public void SetBaseEntity(UnityEntity entity)
+        {
+            this.entity = entity;
+        }
         
         public override T Get<T>()
         {
