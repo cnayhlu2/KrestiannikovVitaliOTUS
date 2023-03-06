@@ -40,9 +40,9 @@ MonoBehaviour:
     - Sirenix.OdinInspector.CompatibilityLayer
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - Zenject-TestFramework
+    - Eqipment
     - SimpleFolderIcon
     - Sirenix.OdinInspector.Modules.UnityMathematics
-    - Eqipment
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
