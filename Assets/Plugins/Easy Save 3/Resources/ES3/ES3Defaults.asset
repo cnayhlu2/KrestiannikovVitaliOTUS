@@ -31,16 +31,16 @@ MonoBehaviour:
     assemblyNames:
     - Zenject
     - ServiceLocator
-    - Assembly-CSharp-firstpass
+    - Assets
     - Elementary
-    - Assembly-CSharp
     - Zenject-IntegrationTests
+    - GameSystem
     - GameElements
     - Entities
     - Sirenix.OdinInspector.CompatibilityLayer
-    - GameSystem
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - Zenject-TestFramework
+    - Eqipment
     - SimpleFolderIcon
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0

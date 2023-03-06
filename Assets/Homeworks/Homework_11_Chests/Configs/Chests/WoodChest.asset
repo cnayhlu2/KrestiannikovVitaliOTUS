@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2512cc364f62fb146b15320d0cdb8cc9, type: 3}
+  m_Name: WoodChest
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  type: 1
+  rewardses:
+  - {fileID: 11400000, guid: e0c2f495cab652e4e959d18a5e7f8c81, type: 2}
+  - {fileID: 11400000, guid: e0e7f7f30415d504196e8fd93fcf82c9, type: 2}
+  duration: 500
