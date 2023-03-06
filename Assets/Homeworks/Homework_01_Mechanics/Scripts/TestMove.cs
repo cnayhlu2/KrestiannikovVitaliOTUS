@@ -51,6 +51,7 @@ public class TestMove : MonoBehaviour
         if (!isReached)
         {
             var moveDirection = distanceVector.normalized;
+            Debug.Log($"Do isReached: {moveDirection}");
             this.entity.Get<IComponent_MoveInDirection>().Move(moveDirection);
         }
         else

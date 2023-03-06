@@ -30,9 +30,9 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Zenject
+    - Assets
     - Elementary
     - ServiceLocator
-    - Assets
     - MonoOptimization
     - Zenject-IntegrationTests
     - GameSystem
