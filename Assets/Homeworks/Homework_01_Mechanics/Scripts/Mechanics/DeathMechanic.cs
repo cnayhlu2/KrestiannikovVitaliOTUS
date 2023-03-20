@@ -6,7 +6,7 @@ namespace Homework_Mechanics.Mechanics
 {
     public class DeathMechanic : MonoBehaviour
     {
-        [SerializeField, Required] private LimitedIntBehavior hitPoints;
+        [SerializeField, Required] private MonoIntVariableLimited hitPoints;
         [SerializeField, Required] private EventReceiver deathReceiver;
 
         private void OnEnable()

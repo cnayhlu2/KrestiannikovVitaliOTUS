@@ -10,7 +10,7 @@ namespace Homework_06_Conveyor
         [SerializeField] private ResourceStorage resourceStorage;
         [SerializeField] private ConveyorZoneVisual visual;
 
-        private LimitedInt storage;
+        private IntVariableLimited storage;
 
         private void OnEnable()
         {

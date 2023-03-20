@@ -6,11 +6,11 @@ namespace Homework_States.Components
 {
     public class ShootComponent : MonoBehaviour, IShootComponent
     {
-        [SerializeField] private BoolBehaviour attacker;
+        [SerializeField] private MonoBoolVariable attacker;
 
         public void Shoot()
         {
-            this.attacker.AssignTrue();
+            this.attacker.SetTrue();
         }
     }
 }

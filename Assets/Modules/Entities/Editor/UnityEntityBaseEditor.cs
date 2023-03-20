@@ -4,19 +4,19 @@ using UnityEngine;
 
 namespace Entities.UnityEditor
 {
-    [CustomEditor(typeof(UnityEntityBase))]
+    [CustomEditor(typeof(UnityEntityBehaviour))]
     public sealed class UnityEntityBaseEditor : Editor
     {
         private SerializedProperty elements;
 
-        private UnityEntityBase entity;
+        private UnityEntityBehaviour entity;
         
         private DragAndDropDrawler dragAndDropDrawler;
 
         private void Awake()
         {
             this.elements = this.serializedObject.FindProperty(nameof(this.elements));
-            this.entity = (UnityEntityBase) this.target;
+            this.entity = (UnityEntityBehaviour) this.target;
         }
 
         private void OnEnable()

@@ -7,7 +7,7 @@ namespace Homework_08_Interaction
     public class DisableOnDeath : MonoBehaviour
     {
         [SerializeField] private List<GameObject> targets;
-        [SerializeField] private BoolBehaviour isDeath;
+        [SerializeField] private MonoBoolVariable isDeath;
 
 
         private void OnEnable()

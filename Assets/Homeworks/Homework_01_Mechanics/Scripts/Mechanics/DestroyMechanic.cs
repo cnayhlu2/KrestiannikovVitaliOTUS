@@ -6,7 +6,7 @@ namespace Homework_Mechanics.Mechanics
 {
     public class DestroyMechanic : MonoBehaviour
     {
-        [SerializeField, Required] private BoolBehaviour state;
+        [SerializeField, Required] private MonoBoolVariable state;
         [SerializeField, Required] private GameObject target;
 
         private void OnEnable()

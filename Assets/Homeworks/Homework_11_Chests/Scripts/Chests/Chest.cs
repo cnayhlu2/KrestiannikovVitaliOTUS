@@ -44,7 +44,7 @@ namespace Homework_11_Chests
 
         public void Reset()
         {
-            this.countdown.Reset();
+            this.countdown.ResetTime();
             this.countdown.Play();
         }
 

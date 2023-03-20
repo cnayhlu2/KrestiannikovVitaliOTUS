@@ -30,14 +30,16 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Zenject
-    - ServiceLocator
     - Assets
     - Elementary
+    - ServiceLocator
+    - MonoOptimization
     - Zenject-IntegrationTests
     - GameSystem
     - GameElements
     - Entities
     - Sirenix.OdinInspector.CompatibilityLayer
+    - Polygons
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - Zenject-TestFramework
     - Eqipment

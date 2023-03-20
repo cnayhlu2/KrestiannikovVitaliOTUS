@@ -12,7 +12,7 @@ namespace Homework_06_Conveyor
 
         [SerializeField] private ResourceStorage inputResourceStorage;
         [SerializeField] private ResourceStorage loadResourceStorage;
-        [SerializeField] private TimerBehaviour worker;
+        [SerializeField] private MonoTimer worker;
 
         private void OnEnable()
         {

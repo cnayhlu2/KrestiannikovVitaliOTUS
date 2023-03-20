@@ -6,9 +6,7 @@ namespace Entities
     [Serializable]
     public sealed class EntityConditonGroup : IEntityCondition
     {
-#if ODIN_INSPECTOR
-        [SerializeField]
-#endif
+        [SerializeReference]
         private IEntityCondition[] conditions;
 
         [SerializeField]

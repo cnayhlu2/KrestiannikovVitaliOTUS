@@ -4,21 +4,16 @@ using UnityEngine;
 namespace Entities
 {
     [CreateAssetMenu(
-        fileName = "EntityConditionGroup",
-        menuName = "Entities/New Entity Condition \'Group\'"
+        fileName = "ConditionGroup",
+        menuName = "Entities/New Condition \'Group\'"
     )]
     public sealed class ScriptableEntityConditionGroup : ScriptableEntityCondition
     {
         [SerializeField]
         private Mode mode;
 
-#if ODIN_INSPECTOR
-        [SerializeField]
+        [SerializeReference]
         private IEntityCondition[] conditions;
-#else
-        [SerializeField]
-        private ScriptableEntityCondition[] conditions;
-#endif
 
         public override bool IsTrue(IEntity entity)
         {

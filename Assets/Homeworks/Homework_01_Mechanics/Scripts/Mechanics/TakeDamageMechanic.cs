@@ -8,7 +8,7 @@ namespace Homework_Mechanics.Mechanics
     public class TakeDamageMechanic : MonoBehaviour
     {
         [SerializeField, Required] private EventReceiver_Int takeDamage;
-        [SerializeField, Required] private LimitedIntBehavior hitPoints;
+        [SerializeField, Required] private MonoIntVariableLimited hitPoints;
 
         private void OnEnable()
         {

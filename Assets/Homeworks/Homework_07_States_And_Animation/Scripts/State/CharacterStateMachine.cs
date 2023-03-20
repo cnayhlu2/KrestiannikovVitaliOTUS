@@ -7,7 +7,7 @@ namespace Homework_States.State
     public class CharacterStateMachine : StateMachine<StateType>
     {
         [SerializeField] private MoveEngine moveEngine;
-        [SerializeField] private BoolBehaviour attacker;
+        [SerializeField] private MonoBoolVariable attacker;
 
 
         private void OnEnable()

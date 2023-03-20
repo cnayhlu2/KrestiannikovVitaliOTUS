@@ -4,7 +4,7 @@ namespace Entities
 {
     public class Entity : IEntity
     {
-        protected readonly List<object> elements;
+        protected List<object> elements;
 
         public Entity()
         {

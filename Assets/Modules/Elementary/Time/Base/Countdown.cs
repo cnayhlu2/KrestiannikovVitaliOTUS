@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Elementary
 {
-    public sealed class Countdown
+    [Serializable]
+    public sealed class Countdown : ICountdown, ISerializationCallbackReceiver
     {
         public event Action OnStarted;
 
@@ -33,9 +34,6 @@ namespace Elementary
             set { this.SetProgress(value); }
         }
 
-        [ReadOnly]
-        [ShowInInspector]
-        [PropertyOrder(-8)]
         public float Duration
         {
             get { return this.duration; }
@@ -44,20 +42,32 @@ namespace Elementary
 
         [ReadOnly]
         [ShowInInspector]
-        [PropertyOrder(-7)]
+        [PropertyOrder(-8)]
         public float RemainingTime
         {
             get { return this.remainingTime; }
             set { this.remainingTime = Mathf.Clamp(value, 0, this.duration); }
         }
 
+        public MonoBehaviour CoroutineDispatcher
+        {
+            set { this.coroutineDispatcher = value; }
+        }
+
+        [Space]
+        [SerializeField]
         private float duration;
+
+        [SerializeField]
+        private MonoBehaviour coroutineDispatcher;
 
         private float remainingTime;
 
-        private readonly MonoBehaviour coroutineDispatcher;
+        private Coroutine coroutine;
 
-        private Coroutine timerCoroutine;
+        public Countdown()
+        {
+        }
 
         public Countdown(MonoBehaviour coroutineDispatcher, float duration)
         {
@@ -75,15 +85,15 @@ namespace Elementary
 
             this.IsPlaying = true;
             this.OnStarted?.Invoke();
-            this.timerCoroutine = this.coroutineDispatcher.StartCoroutine(this.TimerRoutine());
+            this.coroutine = this.coroutineDispatcher.StartCoroutine(this.TimerRoutine());
         }
 
         public void Stop()
         {
-            if (this.timerCoroutine != null)
+            if (this.coroutine != null)
             {
-                this.coroutineDispatcher.StopCoroutine(this.timerCoroutine);
-                this.timerCoroutine = null;
+                this.coroutineDispatcher.StopCoroutine(this.coroutine);
+                this.coroutine = null;
             }
 
             if (this.IsPlaying)
@@ -93,7 +103,7 @@ namespace Elementary
             }
         }
 
-        public void Reset()
+        public void ResetTime()
         {
             this.remainingTime = this.duration;
             this.OnReset?.Invoke();
@@ -117,6 +127,15 @@ namespace Elementary
             progress = Mathf.Clamp01(progress);
             this.remainingTime = this.duration * (1 - progress);
             this.OnTimeChanged?.Invoke();
+        }
+
+        void ISerializationCallbackReceiver.OnAfterDeserialize()
+        {
+            this.remainingTime = this.duration;
+        }
+
+        void ISerializationCallbackReceiver.OnBeforeSerialize()
+        {
         }
     }
 }

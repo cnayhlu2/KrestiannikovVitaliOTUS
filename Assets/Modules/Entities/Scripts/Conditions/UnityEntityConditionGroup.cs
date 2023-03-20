@@ -10,17 +10,21 @@ namespace Entities
         private Mode mode;
 
         [Space]
+        [SerializeReference]
+        private IEntityCondition[] baseConditions;
+        
         [SerializeField]
         private UnityEntityCondition[] monoConditions;
 
         [SerializeField]
         private ScriptableEntityCondition[] scriptableConditions;
-
+        
         private List<IEntityCondition> conditions;
 
         private void Awake()
         {
             this.conditions = new List<IEntityCondition>();
+            this.conditions.AddRange(this.baseConditions);
             this.conditions.AddRange(this.monoConditions);
             this.conditions.AddRange(this.scriptableConditions);
         }

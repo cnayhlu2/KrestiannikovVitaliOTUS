@@ -10,8 +10,8 @@ namespace Homework_08_Interaction
 
     {
         [SerializeField] private BattleMechanics battle;
-        [SerializeField] private TimerBehaviour timer;
-        [SerializeField] private BoolBehaviour isAttacking;
+        [SerializeField] private MonoTimer timer;
+        [SerializeField] private MonoBoolVariable isAttacking;
 
         private BattleOperation operation;
 
@@ -39,14 +39,14 @@ namespace Homework_08_Interaction
         {
             this.timer.ResetTime();
             this.timer.Play();
-            this.isAttacking.AssignTrue();
+            this.isAttacking.SetTrue();
         }
         
 
         private void OnBattleFinished(BattleOperation obj)
         {
             this.timer.Stop();
-            this.isAttacking.AssignFalse();
+            this.isAttacking.SetFalse();
         }
 
         private void OnAttackComplete()
