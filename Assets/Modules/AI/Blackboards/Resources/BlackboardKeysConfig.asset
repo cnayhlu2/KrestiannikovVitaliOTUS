@@ -13,31 +13,12 @@ MonoBehaviour:
   m_Name: BlackboardKeysConfig
   m_EditorClassIdentifier: 
   names:
-  - Target
   - Unit
   - MovePosition
   - Resource
   - ResourceType
-  - Market
   - PatrolIterator
-  - Base
-  - MovePath
-  - Start
-  - End
-  - Enemy
-  - Heal
-  - Storage
-  - Hero
-  - Stun
   - ResourceObjectLocation
-  - StorageIsFull
-  - StoragePutPosition
-  - Settlers
-  - Stay
-  - BasePosition
-  - PathSystem
-  - NavMesh
-  - Surface
   - StoppingDistance
   - PatrolPause
   - Waypoints
