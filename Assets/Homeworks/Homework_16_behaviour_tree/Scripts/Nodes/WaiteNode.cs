@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Homeworks.Homework_16_behaviour_tree.Nodes
 {
-    public class WaiteNode : BehaviourNode,ITaskCallback
+    public class WaiteNode : UnityBehaviourNode,ITaskCallback
     {
         [SerializeField] private WaiteTask waiteTask;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Homeworks.Homework_16_behaviour_tree.Nodes
 {
-    public class AssignWaypointPositionNode : BehaviourNode
+    public class AssignWaypointPositionNode : UnityBehaviourNode
     {
         [SerializeField] private UnityBlackboard blackboard;
 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Homeworks.Homework_16_behaviour_tree.Nodes
 {
-    public class MoveToPositionNode : BehaviourNode, ITaskCallback
+    public class MoveToPositionNode : UnityBehaviourNode, ITaskCallback
     {
         [SerializeField] private MoveTask moveTask;
 
@@ -23,12 +23,12 @@ namespace Homeworks.Homework_16_behaviour_tree.Nodes
                 this.Return(false);
                 return;
             }
-            if (!this.blackboard.TryGetVariable(this.unitKey, out Vector3 movePosition))
+            if (!this.blackboard.TryGetVariable(this.moveToPositionKey, out Vector3 movePosition))
             {
                 this.Return(false);
                 return;
             }
-            if (!this.blackboard.TryGetVariable(this.unitKey, out float stoppingDistance))
+            if (!this.blackboard.TryGetVariable(this.stoppingDistanceKey, out float stoppingDistance))
             {
                 this.Return(false);
                 return;
