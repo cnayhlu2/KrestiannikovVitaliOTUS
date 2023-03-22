@@ -16,7 +16,7 @@ namespace Homeworks.Homework_16_behaviour_tree.Tasks
         private Coroutine moveCoroutine;
 
         [Button]
-        public void SetEntity(UnityEntityBase entity)
+        public void SetEntity(IEntity entity)
         {
             this.entity = entity;
         }
