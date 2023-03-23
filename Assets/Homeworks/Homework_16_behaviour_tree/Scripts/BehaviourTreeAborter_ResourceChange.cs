@@ -15,20 +15,22 @@ namespace Homeworks.Homework_16_behaviour_tree
 
         private void OnEnable()
         {
-            blackboard.OnVariableAdded += this.OnVariableChanged;
-            blackboard.OnVariableChanged += this.OnVariableChanged;
-            blackboard.OnVariableRemoved += this.OnVariableChanged;
+            this.blackboard.OnVariableAdded += this.OnVariableChanged;
+            this.blackboard.OnVariableChanged += this.OnVariableChanged;
+            this.blackboard.OnVariableRemoved += this.OnVariableChanged;
         }
 
         private void OnDisable()
         {
-            blackboard.OnVariableAdded -= this.OnVariableChanged;
-            blackboard.OnVariableChanged -= this.OnVariableChanged;
-            blackboard.OnVariableRemoved -= this.OnVariableChanged;
+            this.blackboard.OnVariableAdded -= this.OnVariableChanged;
+            this.blackboard.OnVariableChanged -= this.OnVariableChanged;
+            this.blackboard.OnVariableRemoved -= this.OnVariableChanged;
         }
 
         private void OnVariableChanged(string key, object value)
         {
+            Debug.Log($"key change : {key} my key {this.resourceLocationKey}");
+            Debug.Log($"is equals {(this.resourceLocationKey == key)}");
             if (this.resourceLocationKey == key)
             {
                 this.behaviourTree.Abort();

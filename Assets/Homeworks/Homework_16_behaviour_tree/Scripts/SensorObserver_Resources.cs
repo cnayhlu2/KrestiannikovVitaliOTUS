@@ -25,7 +25,7 @@ namespace Homeworks.Homework_16_behaviour_tree
             {
                 if (this.FindTarget(buffer, size, out this.resource))
                 {
-                    Debug.Log("Detect Enemy");
+                    Debug.Log("Detect resource");
                     this.blackboard.AddVariable(this.resourceLocationKey, this.resource);
                 }
             }
@@ -33,7 +33,7 @@ namespace Homeworks.Homework_16_behaviour_tree
             {
                 if (!this.IsTargetExists(buffer, size, this.resource))
                 {
-                    Debug.Log("Undetect Enemy");
+                    Debug.Log("Undetect resource");
                     this.blackboard.RemoveVariable(this.resourceLocationKey);
                     this.resource = null;
                 }

@@ -6,7 +6,7 @@ namespace AI.BTree
     public abstract class UnityBehaviourNode : MonoBehaviour, IBehaviourNode
     {
         [ShowInInspector, ReadOnly]
-        public bool IsRunning { get; private set; }
+        public bool IsRunning { get; protected set; }
 
         private IBehaviourCallback callback;
 
@@ -26,11 +26,15 @@ namespace AI.BTree
         [Button]
         public void Abort()
         {
+            Debug.Log($"Try abort is running {this.IsRunning}");
+            
             if (!this.IsRunning)
             {
                 return;
             }
 
+            Debug.Log($"Abort");
+            
             this.OnAbort();
             this.IsRunning = false;
             this.callback = null;

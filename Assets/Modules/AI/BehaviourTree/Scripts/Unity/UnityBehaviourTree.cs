@@ -70,6 +70,7 @@ namespace AI.BTree
             {
                 this.OnStarted?.Invoke();
                 this.root.Run(callback: this);
+                this.IsRunning = true;
             }
         }
 
@@ -77,8 +78,10 @@ namespace AI.BTree
         {
             if (this.IsRunning)
             {
+                Debug.Log($"{nameof(OnAbort)}");
                 this.root.Abort();
                 this.OnAborted?.Invoke();
+                this.IsRunning = false;
             }
         }
         void IBehaviourCallback.Invoke(IBehaviourNode node, bool success)

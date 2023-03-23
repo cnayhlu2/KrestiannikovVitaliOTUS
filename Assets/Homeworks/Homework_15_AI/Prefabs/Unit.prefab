@@ -69,6 +69,7 @@ MonoBehaviour:
   sourcePositionTransform: {fileID: 8337770034888385040}
   movingTransforms:
   - {fileID: 8337770034888385040}
+  - {fileID: 1023406662026984239}
   sourceRotationTransform: {fileID: 8337770034888385040}
   rotatingTransforms:
   - {fileID: 8337770034888385040}

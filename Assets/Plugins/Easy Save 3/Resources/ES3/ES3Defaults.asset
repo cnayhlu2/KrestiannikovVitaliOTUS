@@ -30,32 +30,33 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Zenject
-    - ServiceLocator
     - Assets
+    - BehaviourTree
     - Elementary
+    - ServiceLocator
+    - MonoOptimization
     - Zenject-IntegrationTests
+    - GOAP
     - GameSystem
     - GameElements
-    - Entities
-    - Sirenix.OdinInspector.CompatibilityLayer
-    - MonoOptimization
-    - Polygons
-    - GOAP
-    - AITasks
-    - BehaviourTree
-    - Agents
-    - Blackboards
-    - AICommands
-    - NavMeshComponents
     - Iterators
+    - Entities
     - PathFinding
+    - Agents
+    - GameResources
+    - Sirenix.OdinInspector.CompatibilityLayer
+    - AITasks
+    - AICommands
+    - Polygons
+    - Blackboards
+    - NavMeshComponents
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
+    - Pathfinding (EditMode)
     - Zenject-TestFramework
+    - NavMeshComponentsEditor
     - Eqipment
     - SimpleFolderIcon
     - Sirenix.OdinInspector.Modules.UnityMathematics
-    - NavMeshComponentsEditor
-    - Pathfinding (EditMode)
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

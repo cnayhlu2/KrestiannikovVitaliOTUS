@@ -96,7 +96,6 @@ namespace Elementary
                 
                 this.bufferSize = this.Detect(this.buffer);
                 
-                
                 this.InvokeListeners(this.bufferSize, this.buffer);
                 this.OnCollidersUpdated?.Invoke();
             }
