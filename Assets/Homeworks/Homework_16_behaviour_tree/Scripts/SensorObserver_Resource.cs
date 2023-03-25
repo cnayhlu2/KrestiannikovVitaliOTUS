@@ -36,8 +36,6 @@ namespace Homeworks.Homework_16_behaviour_tree
 
         private void OnResourcesChanged(ResourceType resourceType, int count)
         {
-            Debug.Log($"on resource changeds: {resourceType} count : {count}");
-            
             if (this.blackboard.HasVariable(this.resourceTypeKey))
             {
                 if(this.blackboard.GetVariable<ResourceType>(this.resourceTypeKey)!=resourceType)

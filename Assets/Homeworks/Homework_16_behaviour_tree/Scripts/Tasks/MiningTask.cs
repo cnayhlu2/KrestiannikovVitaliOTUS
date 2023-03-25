@@ -2,10 +2,10 @@ using Entities;
 using Game.GameEngine.GameResources;
 using Game.GameEngine.Mechanics;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Homeworks.Homework_16_behaviour_tree.Tasks
 {
-    
     //заглушка
     public class MiningTask : Task
     {
@@ -44,6 +44,7 @@ namespace Homeworks.Homework_16_behaviour_tree.Tasks
 
 
             var resource_component = this.unit.Get<IComponent_ResourceSource>();
+            Debug.Log($"put resource");
             resource_component.PutResources(ResourceType.WOOD,1);
             
             var treeDestroyComponent = this.tree.Get<IComponent_Destoy>();
