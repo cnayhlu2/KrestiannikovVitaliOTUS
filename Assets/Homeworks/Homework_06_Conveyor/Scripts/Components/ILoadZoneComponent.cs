@@ -2,7 +2,7 @@
 {
     public interface ILoadZoneComponent
     {
-        bool CanLoad(ResourceType resourceType);
+        bool CanLoad(Game.GameEngine.GameResources.ResourceType resourceType);
 
         /// <summary>
         /// 
@@ -10,7 +10,7 @@
         /// <param name="resourceType"></param>
         /// <param name="count"></param>
         /// <returns>count of not loaded resources</returns>
-        int TryLoad(ResourceType resourceType, int count);
+        int TryLoad(Game.GameEngine.GameResources.ResourceType resourceType, int count);
 
         void AddStorageLimit(int size);
     }

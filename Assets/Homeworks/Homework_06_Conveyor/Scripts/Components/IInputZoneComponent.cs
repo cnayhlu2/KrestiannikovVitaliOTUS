@@ -2,8 +2,8 @@
 {
     public interface IInputZoneComponent
     {
-        bool CanUnload(ResourceType resourceType);
-        int UnloadAll(ResourceType resourceType);
+        bool CanUnload(Game.GameEngine.GameResources.ResourceType resourceType);
+        int UnloadAll(Game.GameEngine.GameResources.ResourceType resourceType);
         
         void AddStorageLimit(int size);
     }

@@ -10,7 +10,7 @@ namespace Homework_06_Conveyor
         [SerializeField] private UnityEntity conveyor;
 
         [Button]
-        void PutResource(ResourceType resourceType, int count)
+        void PutResource(Game.GameEngine.GameResources.ResourceType resourceType, int count)
         {
             ILoadZoneComponent loadZoneComponent = conveyor.Get<ILoadZoneComponent>();
 
@@ -20,7 +20,7 @@ namespace Homework_06_Conveyor
         }
 
         [Button]
-        void TryGetSteel(ResourceType resourceType)
+        void TryGetSteel(Game.GameEngine.GameResources.ResourceType resourceType)
         {
             IInputZoneComponent inputZoneComponent = conveyor.Get<IInputZoneComponent>();
             if (inputZoneComponent.CanUnload(resourceType))

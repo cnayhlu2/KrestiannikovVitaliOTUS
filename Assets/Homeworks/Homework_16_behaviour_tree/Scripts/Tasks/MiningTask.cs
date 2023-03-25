@@ -1,9 +1,12 @@
 using Entities;
+using Game.GameEngine.GameResources;
 using Game.GameEngine.Mechanics;
 using Sirenix.OdinInspector;
 
 namespace Homeworks.Homework_16_behaviour_tree.Tasks
 {
+    
+    //заглушка
     public class MiningTask : Task
     {
         [ShowInInspector,ReadOnly] private IEntity unit;
@@ -39,6 +42,10 @@ namespace Homeworks.Homework_16_behaviour_tree.Tasks
                 return;
             }
 
+
+            var resource_component = this.unit.Get<IComponent_ResourceSource>();
+            resource_component.PutResources(ResourceType.WOOD,1);
+            
             var treeDestroyComponent = this.tree.Get<IComponent_Destoy>();
             treeDestroyComponent.Destroy();
             this.Complete(true);

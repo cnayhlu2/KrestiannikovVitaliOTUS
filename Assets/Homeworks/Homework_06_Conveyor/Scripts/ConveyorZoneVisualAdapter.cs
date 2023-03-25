@@ -6,7 +6,7 @@ namespace Homework_06_Conveyor
 {
     public class ConveyorZoneVisualAdapter : MonoBehaviour
     {
-        [SerializeField] private ResourceType resourceType;
+        [SerializeField] private Game.GameEngine.GameResources.ResourceType resourceType;
         [SerializeField] private ResourceStorage resourceStorage;
         [SerializeField] private ConveyorZoneVisual visual;
 

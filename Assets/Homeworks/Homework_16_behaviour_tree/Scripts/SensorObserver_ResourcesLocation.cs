@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Homeworks.Homework_16_behaviour_tree
 {
-    public class SensorObserver_Resources : CollidersSensorController
+    public class SensorObserver_ResourcesLocation : CollidersSensorController
     {
         [Space]
         [SerializeField]

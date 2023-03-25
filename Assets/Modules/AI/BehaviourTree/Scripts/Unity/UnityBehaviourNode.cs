@@ -26,14 +26,10 @@ namespace AI.BTree
         [Button]
         public void Abort()
         {
-            Debug.Log($"Try abort is running {this.IsRunning}");
-            
             if (!this.IsRunning)
             {
                 return;
             }
-
-            Debug.Log($"Abort");
             
             this.OnAbort();
             this.IsRunning = false;

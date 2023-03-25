@@ -7,8 +7,8 @@ namespace Homework_06_Conveyor
 {
     public class ConveyorMechanic : MonoBehaviour
     {
-        [SerializeField] private List<ResourceType> inputResources = new();
-        [SerializeField] private List<ResourceType> outputResources = new();
+        [SerializeField] private List<Game.GameEngine.GameResources.ResourceType> inputResources = new();
+        [SerializeField] private List<Game.GameEngine.GameResources.ResourceType> outputResources = new();
 
         [SerializeField] private ResourceStorage inputResourceStorage;
         [SerializeField] private ResourceStorage loadResourceStorage;

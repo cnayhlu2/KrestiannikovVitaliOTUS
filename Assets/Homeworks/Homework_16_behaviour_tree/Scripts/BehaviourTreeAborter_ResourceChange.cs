@@ -29,8 +29,6 @@ namespace Homeworks.Homework_16_behaviour_tree
 
         private void OnVariableChanged(string key, object value)
         {
-            Debug.Log($"key change : {key} my key {this.resourceLocationKey}");
-            Debug.Log($"is equals {(this.resourceLocationKey == key)}");
             if (this.resourceLocationKey == key)
             {
                 this.behaviourTree.Abort();

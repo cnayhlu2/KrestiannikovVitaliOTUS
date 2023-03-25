@@ -7,12 +7,12 @@ namespace Homework_06_Conveyor.Components
     {
         [SerializeField] private ResourceStorage resourceStorage;
 
-        bool ILoadZoneComponent.CanLoad(ResourceType resourceType)
+        bool ILoadZoneComponent.CanLoad(Game.GameEngine.GameResources.ResourceType resourceType)
         {
             return resourceStorage.CanLoad(resourceType);
         }
 
-        int ILoadZoneComponent.TryLoad(ResourceType resourceType, int count)
+        int ILoadZoneComponent.TryLoad(Game.GameEngine.GameResources.ResourceType resourceType, int count)
         {
             return resourceStorage.TryLoad(resourceType, count);
         }

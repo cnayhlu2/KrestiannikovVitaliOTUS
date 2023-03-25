@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Elementary;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,14 +18,14 @@ namespace Homework_06_Conveyor.Core
             }
         }
 
-        public IntVariableLimited GetStorage(ResourceType resourceType)
+        public IntVariableLimited GetStorage(Game.GameEngine.GameResources.ResourceType resourceType)
         {
             if (!resources.ContainsKey(resourceType))
                 throw new Exception($"Do not have storage by type {resourceType}");
             return resources[resourceType];
         }
 
-        public bool CanLoad(ResourceType resourceType)
+        public bool CanLoad(Game.GameEngine.GameResources.ResourceType resourceType)
         {
             if (!resources.ContainsKey(resourceType))
                 return false;
@@ -34,7 +33,7 @@ namespace Homework_06_Conveyor.Core
         }
 
         [Button]
-        public int TryLoad(ResourceType resourceType, int count)
+        public int TryLoad(Game.GameEngine.GameResources.ResourceType resourceType, int count)
         {
             if (!resources.ContainsKey(resourceType))
                 return count;
@@ -44,14 +43,14 @@ namespace Homework_06_Conveyor.Core
             return (space >= count) ? 0 : count - space;
         }
 
-        public bool CanUnload(ResourceType resourceType)
+        public bool CanUnload(Game.GameEngine.GameResources.ResourceType resourceType)
         {
             if (!resources.ContainsKey(resourceType))
                 return false;
             return resources[resourceType].Value > 0;
         }
 
-        public int UnloadAll(ResourceType resourceType)
+        public int UnloadAll(Game.GameEngine.GameResources.ResourceType resourceType)
         {
             if (!resources.ContainsKey(resourceType))
                 return 0;
@@ -61,7 +60,7 @@ namespace Homework_06_Conveyor.Core
             return count;
         }
 
-        public void Unload(ResourceType resourceType, int count)
+        public void Unload(Game.GameEngine.GameResources.ResourceType resourceType, int count)
         {
             if (!resources.ContainsKey(resourceType))
                 return;
@@ -70,7 +69,7 @@ namespace Homework_06_Conveyor.Core
     }
 
     [System.Serializable]
-    public class SerializedDictionary : UnitySerializedDictionary<ResourceType, IntVariableLimited>
+    public class SerializedDictionary : UnitySerializedDictionary<Game.GameEngine.GameResources.ResourceType, IntVariableLimited>
     {
     }
 }
