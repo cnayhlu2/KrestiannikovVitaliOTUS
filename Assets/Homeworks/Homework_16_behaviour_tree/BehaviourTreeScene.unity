@@ -2592,7 +2592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e3a150f25b4d618c4548fa1a70fbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTreeTask: {fileID: 1635297362}
+  miningTask: {fileID: 1635297362}
   blackboard: {fileID: 746579784}
   unitKey: Unit
   resourceLocationKey: ResourceObjectLocation
@@ -3050,8 +3050,8 @@ MonoBehaviour:
   waypoints: {fileID: 1866945945}
   patrolDelayKey: PatrolPause
   patrolDelay: 1
-  shopPositionKey: ShopPosition
-  shopPosition: {fileID: 103772830}
+  conveyorKey: Conveyor
+  conveyor: {fileID: 2100777525}
 --- !u!114 &746579784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3156,7 +3156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801072186}
-  - component: {fileID: 801072187}
+  - component: {fileID: 801072188}
   m_Layer: 0
   m_Name: SetShopPosition
   m_TagString: Untagged
@@ -3179,7 +3179,7 @@ Transform:
   m_Father: {fileID: 1504687396}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &801072187
+--- !u!114 &801072188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3188,12 +3188,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 801072185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb0df98f76e483d86f0732477e4bd93, type: 3}
+  m_Script: {fileID: 11500000, guid: bb72dbc4cf3c43cdafa07238ad5852e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard: {fileID: 746579784}
-  moveToPositionKey: MovePosition
-  shopToPositionKey: ShopPosition
+  entityKey: Conveyor
+  movePositionKey: MovePosition
 --- !u!1 &837426766
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,7 +6175,7 @@ GameObject:
   - component: {fileID: 1635297361}
   - component: {fileID: 1635297362}
   m_Layer: 0
-  m_Name: TreeDestorer
+  m_Name: MiningTask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6450,7 +6450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard: {fileID: 746579784}
-  resourceLocationKey: ResourceObjectLocation
+  entityKey: ResourceObjectLocation
   movePositionKey: MovePosition
 --- !u!1 &1701714782
 GameObject:

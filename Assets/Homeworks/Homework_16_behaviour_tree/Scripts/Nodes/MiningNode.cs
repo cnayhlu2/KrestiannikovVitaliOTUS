@@ -3,12 +3,13 @@ using AI.BTree;
 using Entities;
 using Homeworks.Homework_16_behaviour_tree.Tasks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Homeworks.Homework_16_behaviour_tree.Nodes
 {
-    public class KillTreeNode : UnityBehaviourNode, ITaskCallback
+    public class MiningNode : UnityBehaviourNode, ITaskCallback
     {
-        [SerializeField] private KillTreeTask killTreeTask;
+        [FormerlySerializedAs("killResourceTask")] [SerializeField] private MiningTask miningTask;
 
         [SerializeField] private UnityBlackboard blackboard;
         
@@ -19,7 +20,7 @@ namespace Homeworks.Homework_16_behaviour_tree.Nodes
         
         protected override void Run()
         {
-            if (!this.blackboard.TryGetVariable(this.resourceLocationKey, out Transform resource))
+            if (!this.blackboard.TryGetVariable(this.resourceLocationKey, out IEntity resource))
             {
                 this.Return(false);
                 return;
@@ -36,14 +37,10 @@ namespace Homeworks.Homework_16_behaviour_tree.Nodes
                 return;
             }
 
-            UnityEntityProxy proxy = resource.GetComponent<UnityEntityProxy>();
-            
-            this.killTreeTask.SetTree(proxy.Entity);
-            this.killTreeTask.SetUnit(unit);
-            this.killTreeTask.SetStoppingDistance(stoppingDistance);
-
-
-            this.killTreeTask.Do(this);
+            this.miningTask.SetTree(resource);
+            this.miningTask.SetUnit(unit);
+            this.miningTask.SetStoppingDistance(stoppingDistance);
+            this.miningTask.Do(this);
         }
 
         public void OnComplete(Task task, bool saccess)

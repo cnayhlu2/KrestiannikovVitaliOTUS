@@ -42,8 +42,8 @@ namespace Homeworks.Homework_16_behaviour_tree
         private float patrolDelay = 1.0f;
 
 
-        [SerializeField,Space, BlackboardKey] private string shopPositionKey;
-        [SerializeField] private Transform shopPosition;
+        [SerializeField,Space, BlackboardKey] private string conveyorKey;
+        [SerializeField] private UnityEntityBase conveyor;
         
         private void Awake()
         {
@@ -51,7 +51,7 @@ namespace Homeworks.Homework_16_behaviour_tree
             this.blackboard.AddVariable(this.stoppingDistanceKey, this.stoppingDistance);
             this.blackboard.AddVariable(this.waypointsKey, this.CreateWaypointsIterator());
             this.blackboard.AddVariable(this.patrolDelayKey, this.patrolDelay);
-            this.blackboard.AddVariable(this.shopPositionKey, this.shopPosition.position);
+            this.blackboard.AddVariable(this.conveyorKey, this.conveyor);
         }
 
         private IEnumerator<Vector3> CreateWaypointsIterator()

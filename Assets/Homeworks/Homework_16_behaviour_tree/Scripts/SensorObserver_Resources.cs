@@ -1,5 +1,6 @@
 using AI.Blackboards;
 using Elementary;
+using Entities;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,7 +18,7 @@ namespace Homeworks.Homework_16_behaviour_tree
         [SerializeField]
         private string resourceLocationKey;
         
-        private Transform resource;
+        private IEntity resource;
         
         protected override void OnCollidersUpdated(Collider[] buffer, int size)
         {
@@ -40,24 +41,24 @@ namespace Homeworks.Homework_16_behaviour_tree
             }
         }
         
-        private bool FindTarget(Collider[] buffer, int size, out Transform target)
+        private bool FindTarget(Collider[] buffer, int size, out IEntity target)
         {
             for (var i = 0; i < size; i++)
             {
                 var collder = buffer[i];
-                target = collder.transform;
+                target = collder.GetComponent<IEntity>();
                 return true;
             }
             target = default;
             return false;
         }
         
-        private bool IsTargetExists(Collider[] buffer, int size, Transform target)
+        private bool IsTargetExists(Collider[] buffer, int size, IEntity target)
         {
             for (var i = 0; i < size; i++)
             {
                 var collder = buffer[i];
-                if (collder.transform == target)
+                if (collder.GetComponent<IEntity>() == target)
                     return true;
             }
 

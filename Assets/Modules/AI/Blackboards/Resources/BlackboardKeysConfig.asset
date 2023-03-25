@@ -22,4 +22,4 @@ MonoBehaviour:
   - StoppingDistance
   - PatrolPause
   - Waypoints
-  - ShopPosition
+  - Conveyor

@@ -1,14 +1,10 @@
-using System.Collections.Generic;
 using Entities;
 using Game.GameEngine.Mechanics;
 using Sirenix.OdinInspector;
 
 namespace Homeworks.Homework_16_behaviour_tree.Tasks
 {
-    /// <summary>
-    /// for fast creat homework
-    /// </summary>
-    public class KillTreeTask : Task
+    public class MiningTask : Task
     {
         [ShowInInspector,ReadOnly] private IEntity unit;
         [ShowInInspector,ReadOnly] private IEntity tree;
